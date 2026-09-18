@@ -1,0 +1,83 @@
+/**
+ * DriveMe Animations & Scroll-Reveal Effects
+ */
+
+/* Scroll-Reveal Base Classes */
+.dm-reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.dm-reveal--scale {
+  transform: scale(0.96) translateY(16px);
+}
+
+.dm-reveal--fade {
+  transform: none;
+}
+
+/* Revealed State (triggered by IntersectionObserver in JS) */
+.dm-reveal.is-revealed {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Stagger Delays for Grid Children */
+.dm-stagger-1 { transition-delay: 80ms; }
+.dm-stagger-2 { transition-delay: 160ms; }
+.dm-stagger-3 { transition-delay: 240ms; }
+.dm-stagger-4 { transition-delay: 320ms; }
+
+/* Micro Animations */
+@keyframes dm-float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes dm-pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(242, 129, 29, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(242, 129, 29, 0);
+  }
+}
+
+@keyframes dm-dash-road {
+  to {
+    stroke-dashoffset: -30;
+  }
+}
+
+.dm-animated-road {
+  animation: dm-dash-road 1.2s linear infinite;
+}
+
+.dm-animate-float {
+  animation: dm-float 4s ease-in-out infinite;
+}
+
+.dm-animate-pulse {
+  animation: dm-pulse-glow 2.5s infinite;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .dm-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

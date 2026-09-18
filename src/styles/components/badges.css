@@ -1,0 +1,92 @@
+/**
+ * DriveMe Status Badges & Tags
+ */
+
+.dm-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.25rem 0.65rem;
+  font-family: var(--dm-font-heading);
+  font-size: var(--dm-font-size-xs);
+  font-weight: var(--dm-font-weight-semibold);
+  line-height: 1.2;
+  border-radius: var(--dm-radius-full);
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+
+/* Status: Available (Green) */
+.dm-badge--available {
+  background-color: var(--dm-status-available-bg);
+  color: var(--dm-status-available);
+  border-color: var(--dm-status-available-border);
+}
+
+.dm-badge--available::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: var(--dm-radius-full);
+  background-color: var(--dm-status-available);
+  box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.2);
+}
+
+/* Status: Booked (Soft Warning Yellow) */
+.dm-badge--booked {
+  background-color: var(--dm-status-booked-bg);
+  color: #B45309;
+  border-color: var(--dm-status-booked-border);
+}
+
+.dm-badge--booked::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: var(--dm-radius-full);
+  background-color: var(--dm-status-booked);
+  box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.2);
+}
+
+/* Status: Off-Duty (Neutral Gray) */
+.dm-badge--offduty {
+  background-color: var(--dm-status-offduty-bg);
+  color: var(--dm-status-offduty);
+  border-color: var(--dm-status-offduty-border);
+}
+
+.dm-badge--offduty::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: var(--dm-radius-full);
+  background-color: var(--dm-status-offduty);
+}
+
+/* Vehicle & Category Pills */
+.dm-badge--vehicle {
+  background-color: var(--dm-color-surface-subtle);
+  color: var(--dm-color-navy);
+  border-color: var(--dm-color-border-subtle);
+  font-weight: var(--dm-font-weight-medium);
+}
+
+.dm-badge--vehicle svg {
+  width: 14px;
+  height: 14px;
+  stroke: var(--dm-color-navy);
+}
+
+/* Brand Orange Accent Badge */
+.dm-badge--accent {
+  background-color: var(--dm-color-orange-light);
+  color: var(--dm-color-orange);
+  border-color: rgba(242, 129, 29, 0.2);
+}
+
+/* Verified / Trust Badge */
+.dm-badge--verified {
+  background-color: rgba(11, 30, 66, 0.05);
+  color: var(--dm-color-navy);
+  border-color: rgba(11, 30, 66, 0.12);
+}

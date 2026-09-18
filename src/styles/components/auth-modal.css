@@ -1,0 +1,409 @@
+/* ==========================================================================
+   DRIVEME — AUTH / LOGIN MODAL COMPONENT (auth-modal.css)
+   Role-segmented phone + OTP verification modal for Learners & Trainers
+   ========================================================================== */
+
+/* Modal Root & Backdrop */
+.dm-auth-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(11, 30, 66, 0.58);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: var(--dm-z-modal-backdrop, 1050);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--dm-transition-normal), visibility var(--dm-transition-normal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--dm-space-4);
+}
+
+.dm-auth-backdrop.is-active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Modal Dialog Card */
+.dm-auth-dialog {
+  position: relative;
+  background: var(--dm-color-surface, #FFFFFF);
+  border-radius: var(--dm-radius-lg, 16px);
+  box-shadow: var(--dm-shadow-xl, 0 20px 25px -5px rgba(11, 30, 66, 0.15));
+  border: 1px solid rgba(11, 30, 66, 0.08);
+  width: 100%;
+  max-width: 440px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: var(--dm-space-6) var(--dm-space-6) var(--dm-space-6);
+  transform: scale(0.94) translateY(12px);
+  transition: transform var(--dm-transition-spring, cubic-bezier(0.34, 1.56, 0.64, 1) 0.35s),
+              opacity var(--dm-transition-normal, 0.25s ease);
+}
+
+.dm-auth-backdrop.is-active .dm-auth-dialog {
+  transform: scale(1) translateY(0);
+}
+
+/* Close Button (×) */
+.dm-auth-close {
+  position: absolute;
+  top: var(--dm-space-4);
+  right: var(--dm-space-4);
+  width: 32px;
+  height: 32px;
+  border-radius: var(--dm-radius-full, 9999px);
+  background: var(--dm-color-canvas, #FAFAFC);
+  border: 1px solid rgba(11, 30, 66, 0.06);
+  color: var(--dm-color-text-secondary, #5B6472);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background var(--dm-transition-fast), color var(--dm-transition-fast), transform var(--dm-transition-fast);
+  z-index: 10;
+}
+
+.dm-auth-close:hover {
+  background: var(--dm-color-orange-subtle, #FEF3E8);
+  color: var(--dm-color-orange, #F2811D);
+  transform: rotate(90deg);
+}
+
+.dm-auth-close:focus-visible {
+  outline: 2px solid var(--dm-color-orange, #F2811D);
+  outline-offset: 2px;
+}
+
+/* Top Header & Brand Emblem */
+.dm-auth-header {
+  text-align: center;
+  margin-bottom: var(--dm-space-5);
+}
+
+.dm-auth-logo-img {
+  height: 52px;
+  width: auto;
+  object-fit: contain;
+  margin: 0 auto var(--dm-space-2);
+  display: block;
+}
+
+.dm-auth-title {
+  font-family: var(--dm-font-heading, 'Plus Jakarta Sans', sans-serif);
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--dm-color-navy, #0B1E42);
+  line-height: 1.2;
+  margin-bottom: 4px;
+}
+
+.dm-auth-subtitle {
+  font-size: var(--dm-font-size-xs, 0.75rem);
+  color: var(--dm-color-text-secondary, #5B6472);
+  line-height: 1.45;
+}
+
+/* Segmented Role Tabs */
+.dm-auth-tabs {
+  display: flex;
+  background: #F1F4F9;
+  border-radius: var(--dm-radius-md, 12px);
+  padding: 4px;
+  margin-bottom: var(--dm-space-5);
+  position: relative;
+}
+
+.dm-auth-tab {
+  flex: 1;
+  padding: 8px 12px;
+  font-family: var(--dm-font-heading, 'Plus Jakarta Sans', sans-serif);
+  font-size: var(--dm-font-size-xs, 0.75rem);
+  font-weight: 700;
+  text-align: center;
+  border: none;
+  background: transparent;
+  color: var(--dm-color-text-secondary, #5B6472);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all var(--dm-transition-fast);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.dm-auth-tab:hover:not(.is-active) {
+  color: var(--dm-color-navy, #0B1E42);
+}
+
+.dm-auth-tab.is-active {
+  background: #FFFFFF;
+  color: var(--dm-color-navy, #0B1E42);
+  box-shadow: 0 2px 6px rgba(11, 30, 66, 0.08);
+}
+
+.dm-auth-tab-icon {
+  width: 14px;
+  height: 14px;
+  stroke: currentColor;
+}
+
+/* Form Container */
+.dm-auth-step {
+  display: none;
+  animation: dm-auth-fade-in 0.25s ease forwards;
+}
+
+.dm-auth-step.is-active {
+  display: block;
+}
+
+@keyframes dm-auth-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Input Group: Country Code + Phone */
+.dm-auth-input-label {
+  display: block;
+  font-family: var(--dm-font-heading, 'Plus Jakarta Sans', sans-serif);
+  font-size: var(--dm-font-size-xs, 0.75rem);
+  font-weight: 700;
+  color: var(--dm-color-navy, #0B1E42);
+  margin-bottom: 6px;
+}
+
+.dm-auth-phone-group {
+  display: flex;
+  align-items: center;
+  border: 1.5px solid var(--dm-color-border, #E2E8F0);
+  border-radius: var(--dm-radius-md, 12px);
+  background: var(--dm-color-canvas, #FAFAFC);
+  overflow: hidden;
+  transition: border-color var(--dm-transition-fast), box-shadow var(--dm-transition-fast), background var(--dm-transition-fast);
+  margin-bottom: var(--dm-space-4);
+}
+
+.dm-auth-phone-group:focus-within {
+  border-color: var(--dm-color-orange, #F2811D);
+  background: #FFFFFF;
+  box-shadow: 0 0 0 3px rgba(242, 129, 29, 0.15);
+}
+
+.dm-auth-country-pill {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 10px 12px;
+  background: rgba(11, 30, 66, 0.03);
+  border-right: 1.5px solid var(--dm-color-border, #E2E8F0);
+  font-family: var(--dm-font-body, 'Inter', sans-serif);
+  font-size: var(--dm-font-size-sm, 0.875rem);
+  font-weight: 600;
+  color: var(--dm-color-navy, #0B1E42);
+  user-select: none;
+}
+
+.dm-auth-phone-input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  padding: 10px 14px;
+  font-family: var(--dm-font-body, 'Inter', sans-serif);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--dm-color-navy, #0B1E42);
+  outline: none;
+}
+
+.dm-auth-phone-input::placeholder {
+  color: #94A3B8;
+  font-weight: 400;
+}
+
+/* Primary Action Button */
+.dm-auth-submit-btn {
+  width: 100%;
+  padding: 12px 18px;
+  font-size: var(--dm-font-size-sm, 0.875rem);
+  font-weight: 700;
+  justify-content: center;
+  border-radius: var(--dm-radius-md, 12px);
+  margin-bottom: var(--dm-space-3);
+  cursor: pointer;
+}
+
+/* Legal Disclaimer */
+.dm-auth-disclaimer {
+  font-size: 0.7rem;
+  color: var(--dm-color-text-secondary, #5B6472);
+  text-align: center;
+  line-height: 1.45;
+  margin-top: var(--dm-space-2);
+}
+
+.dm-auth-disclaimer a {
+  color: var(--dm-color-navy, #0B1E42);
+  text-decoration: underline;
+  text-decoration-color: rgba(11, 30, 66, 0.3);
+  transition: color var(--dm-transition-fast);
+}
+
+.dm-auth-disclaimer a:hover {
+  color: var(--dm-color-orange, #F2811D);
+}
+
+/* Step 2: OTP Verification Screen */
+.dm-auth-otp-meta {
+  background: rgba(11, 30, 66, 0.03);
+  border-radius: var(--dm-radius-md, 12px);
+  padding: 10px 14px;
+  margin-bottom: var(--dm-space-4);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dm-auth-otp-phone-text {
+  font-size: var(--dm-font-size-xs, 0.75rem);
+  color: var(--dm-color-navy, #0B1E42);
+  font-weight: 600;
+}
+
+.dm-auth-otp-edit-btn {
+  font-size: var(--dm-font-size-xs, 0.75rem);
+  font-weight: 700;
+  color: var(--dm-color-orange, #F2811D);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: underline;
+}
+
+.dm-auth-otp-edit-btn:hover {
+  color: var(--dm-color-orange-dark, #D66D12);
+}
+
+/* OTP Digits Grid (6 discrete boxes) */
+.dm-auth-otp-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 8px;
+  margin-bottom: var(--dm-space-4);
+}
+
+.dm-auth-otp-box {
+  width: 100%;
+  aspect-ratio: 1;
+  text-align: center;
+  font-family: var(--dm-font-heading, 'Plus Jakarta Sans', sans-serif);
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--dm-color-navy, #0B1E42);
+  background: var(--dm-color-canvas, #FAFAFC);
+  border: 1.5px solid var(--dm-color-border, #E2E8F0);
+  border-radius: 10px;
+  outline: none;
+  transition: all var(--dm-transition-fast);
+}
+
+.dm-auth-otp-box:focus {
+  border-color: var(--dm-color-orange, #F2811D);
+  background: #FFFFFF;
+  box-shadow: 0 0 0 3px rgba(242, 129, 29, 0.15);
+  transform: translateY(-2px);
+}
+
+.dm-auth-otp-box.is-filled {
+  border-color: var(--dm-color-navy, #0B1E42);
+  background: #FFFFFF;
+}
+
+/* Resend & Timer Row */
+.dm-auth-resend-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: var(--dm-font-size-xs, 0.75rem);
+  color: var(--dm-color-text-secondary, #5B6472);
+  margin-bottom: var(--dm-space-5);
+}
+
+.dm-auth-resend-btn {
+  color: var(--dm-color-orange, #F2811D);
+  font-weight: 700;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.dm-auth-resend-btn:disabled {
+  color: #94A3B8;
+  cursor: not-allowed;
+  text-decoration: none;
+}
+
+/* Role Banner / Badge inside card */
+.dm-auth-role-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 2px 8px;
+  border-radius: 999px;
+  margin-bottom: 8px;
+}
+
+.dm-auth-role-badge.is-learner {
+  background: rgba(242, 129, 29, 0.12);
+  color: var(--dm-color-orange-dark, #D66D12);
+}
+
+.dm-auth-role-badge.is-trainer {
+  background: rgba(11, 30, 66, 0.1);
+  color: var(--dm-color-navy, #0B1E42);
+}
+
+/* Success Greeting Banner */
+.dm-auth-success-banner {
+  display: none;
+  background: #ECFDF5;
+  border: 1px solid #A7F3D0;
+  color: #065F46;
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+  margin-top: var(--dm-space-3);
+  animation: dm-auth-fade-in 0.3s ease;
+}
+
+.dm-auth-success-banner.is-active {
+  display: block;
+}
+
+.dm-auth-success-title {
+  font-family: var(--dm-font-heading, 'Plus Jakarta Sans', sans-serif);
+  font-size: 1rem;
+  font-weight: 800;
+  color: #047857;
+  margin-bottom: 4px;
+}
+
+.dm-auth-success-sub {
+  font-size: var(--dm-font-size-xs, 0.75rem);
+  color: #065F46;
+}

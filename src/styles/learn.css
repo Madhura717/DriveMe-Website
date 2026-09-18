@@ -1,0 +1,588 @@
+/**
+ * DriveMe Learn Page Styles (Prompt 4)
+ * Part 1: Curriculum capabilities & progression
+ * Part 2: DL Test Tracks (8-Track & H-Track) & Traffic Signals Library
+ */
+
+/* =========================================================
+   PART 1: "WHAT YOU'LL LEARN ON DRIVEME"
+   ========================================================= */
+.dm-learn-hero {
+  padding-top: calc(var(--dm-nav-height) + 2.5rem);
+  padding-bottom: clamp(3.5rem, 6vw, 5rem);
+  background: 
+    radial-gradient(ellipse 70% 55% at 50% 10%, rgba(242, 129, 29, 0.08) 0%, transparent 65%),
+    linear-gradient(180deg, #FFFFFF 0%, var(--dm-color-bg) 100%);
+  position: relative;
+}
+
+.dm-learn-header {
+  text-align: center;
+  max-width: 800px;
+  margin-inline: auto;
+  margin-bottom: clamp(2.5rem, 5vw, 4rem);
+}
+
+.dm-curriculum-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--dm-space-6);
+}
+
+@media (min-width: 640px) {
+  .dm-curriculum-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .dm-curriculum-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.dm-curriculum-card {
+  background: var(--dm-color-surface);
+  border: 1px solid var(--dm-color-border-subtle);
+  border-radius: var(--dm-radius-lg);
+  padding: var(--dm-space-6);
+  box-shadow: var(--dm-shadow-xs);
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--dm-transition-base), box-shadow var(--dm-transition-base), border-color var(--dm-transition-base);
+}
+
+.dm-curriculum-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--dm-shadow-md);
+  border-color: rgba(242, 129, 29, 0.3);
+}
+
+.dm-curriculum-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--dm-radius-md);
+  background-color: var(--dm-color-orange-light);
+  color: var(--dm-color-orange);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--dm-space-4);
+  flex-shrink: 0;
+  transition: background-color var(--dm-transition-fast), color var(--dm-transition-fast), transform var(--dm-transition-fast);
+}
+
+.dm-curriculum-card:hover .dm-curriculum-icon {
+  background-color: var(--dm-color-orange);
+  color: #FFFFFF;
+  transform: scale(1.05);
+}
+
+.dm-curriculum-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.dm-curriculum-title {
+  font-size: var(--dm-font-size-base);
+  font-weight: var(--dm-font-weight-bold);
+  color: var(--dm-color-navy);
+  margin-bottom: var(--dm-space-2);
+}
+
+.dm-curriculum-desc {
+  font-size: var(--dm-font-size-sm);
+  color: var(--dm-color-text-secondary);
+  line-height: 1.6;
+  margin-bottom: var(--dm-space-4);
+}
+
+.dm-curriculum-meta {
+  margin-top: auto;
+  padding-top: var(--dm-space-3);
+  border-top: 1px solid var(--dm-color-border-subtle);
+}
+
+/* =========================================================
+   PART 2: "EXAM & LLR SUPPORT"
+   ========================================================= */
+.dm-exam-support-section {
+  padding-block: clamp(4.5rem, 7vw, 6.5rem);
+  background-color: var(--dm-color-surface);
+  border-top: 1px solid var(--dm-color-border-subtle);
+}
+
+.dm-exam-header {
+  text-align: center;
+  max-width: 780px;
+  margin-inline: auto;
+  margin-bottom: clamp(2.5rem, 5vw, 4rem);
+}
+
+/* DL Test Tracks Accordion Block */
+.dm-tracks-block {
+  margin-bottom: clamp(4rem, 7vw, 6rem);
+}
+
+.dm-tracks-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: var(--dm-space-6);
+  max-width: 1060px;
+  margin-inline: auto;
+}
+
+.dm-track-card {
+  background: var(--dm-color-bg);
+  border: 1.5px solid var(--dm-color-border-subtle);
+  border-radius: var(--dm-radius-xl);
+  overflow: hidden;
+  box-shadow: var(--dm-shadow-sm);
+  transition: all var(--dm-transition-base);
+}
+
+.dm-track-card.is-active {
+  border-color: var(--dm-color-orange);
+  box-shadow: var(--dm-shadow-lg);
+  background: #FFFFFF;
+}
+
+.dm-track-card-header {
+  padding: var(--dm-space-5) var(--dm-space-6);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--dm-space-4);
+  cursor: pointer;
+  user-select: none;
+  background: #FFFFFF;
+  transition: background-color var(--dm-transition-fast);
+}
+
+.dm-track-card-header:hover {
+  background: rgba(242, 129, 29, 0.03);
+}
+
+.dm-track-header-left {
+  display: flex;
+  align-items: center;
+  gap: var(--dm-space-4);
+}
+
+.dm-track-pill-num {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--dm-radius-md);
+  background: var(--dm-color-navy);
+  color: #FFFFFF;
+  font-family: var(--dm-font-heading);
+  font-size: var(--dm-font-size-xl);
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.dm-track-card.is-active .dm-track-pill-num {
+  background: var(--dm-color-orange);
+  box-shadow: var(--dm-shadow-orange-glow);
+}
+
+.dm-track-header-title h3 {
+  font-size: var(--dm-font-size-xl);
+  font-weight: var(--dm-font-weight-extrabold);
+  color: var(--dm-color-navy);
+  margin-bottom: 2px;
+}
+
+.dm-track-header-title span {
+  font-size: var(--dm-font-size-xs);
+  color: var(--dm-color-text-secondary);
+}
+
+.dm-track-header-right {
+  display: flex;
+  align-items: center;
+  gap: var(--dm-space-3);
+}
+
+.dm-track-toggle-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: var(--dm-radius-full);
+  background: var(--dm-color-surface-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--dm-color-navy);
+  transition: transform var(--dm-transition-base), background-color var(--dm-transition-fast), color var(--dm-transition-fast);
+}
+
+.dm-track-card.is-active .dm-track-toggle-btn {
+  transform: rotate(180deg);
+  background: var(--dm-color-orange);
+  color: #FFFFFF;
+}
+
+/* Expandable Track Body with Smooth Height Animation */
+.dm-track-detail-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 500ms cubic-bezier(0.16, 1, 0.3, 1), opacity 400ms ease;
+  opacity: 0;
+}
+
+.dm-track-card.is-active .dm-track-detail-body {
+  max-height: 1200px;
+  opacity: 1;
+}
+
+.dm-track-detail-content {
+  padding: 0 var(--dm-space-6) var(--dm-space-8) var(--dm-space-6);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--dm-space-8);
+  border-top: 1px solid var(--dm-color-border-subtle);
+  padding-top: var(--dm-space-6);
+}
+
+@media (min-width: 900px) {
+  .dm-track-detail-content {
+    grid-template-columns: 1.15fr 1fr;
+    align-items: center;
+  }
+}
+
+/* Track Diagram Container */
+.dm-track-diagram-wrapper {
+  background: linear-gradient(145deg, #0B1E42 0%, #162E5F 100%);
+  border-radius: var(--dm-radius-lg);
+  padding: var(--dm-space-6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--dm-shadow-md);
+  position: relative;
+  overflow: hidden;
+}
+
+.dm-track-svg {
+  width: 100%;
+  max-width: 440px;
+  height: auto;
+  filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.3));
+}
+
+.dm-diagram-legend {
+  display: flex;
+  gap: var(--dm-space-4);
+  margin-top: var(--dm-space-4);
+  font-size: var(--dm-font-size-xs);
+  color: rgba(255, 255, 255, 0.85);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.dm-legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.dm-legend-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+/* Track Requirements & Spec Panel */
+.dm-track-specs-panel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--dm-space-4);
+}
+
+.dm-spec-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--dm-space-3);
+}
+
+.dm-spec-metric-box {
+  background: var(--dm-color-surface-subtle);
+  border: 1px solid var(--dm-color-border-subtle);
+  border-radius: var(--dm-radius-md);
+  padding: var(--dm-space-3) var(--dm-space-4);
+}
+
+.dm-spec-metric-box span {
+  font-size: 11px;
+  text-transform: uppercase;
+  color: var(--dm-color-text-muted);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  display: block;
+}
+
+.dm-spec-metric-box strong {
+  font-size: var(--dm-font-size-lg);
+  color: var(--dm-color-navy);
+  font-family: var(--dm-font-heading);
+}
+
+.dm-maneuvers-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: var(--dm-space-2);
+}
+
+.dm-maneuver-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: var(--dm-font-size-sm);
+  color: var(--dm-color-text-secondary);
+  line-height: 1.5;
+}
+
+.dm-maneuver-num {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--dm-color-orange-light);
+  color: var(--dm-color-orange);
+  font-family: var(--dm-font-heading);
+  font-size: 11px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* =========================================================
+   TRAFFIC SIGNALS LIBRARY ("Know Every Signal")
+   ========================================================= */
+.dm-signals-block {
+  background: var(--dm-color-bg);
+  border: 1px solid var(--dm-color-border-subtle);
+  border-radius: var(--dm-radius-xl);
+  padding: clamp(2rem, 5vw, 3.5rem);
+  box-shadow: var(--dm-shadow-sm);
+}
+
+.dm-signals-toolbar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--dm-space-4);
+  margin-bottom: var(--dm-space-8);
+  align-items: stretch;
+}
+
+@media (min-width: 768px) {
+  .dm-signals-toolbar {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+/* Live Search Box */
+.dm-signals-search-wrap {
+  position: relative;
+  max-width: 360px;
+  width: 100%;
+}
+
+.dm-signals-search-input {
+  width: 100%;
+  height: 46px;
+  padding-left: 42px;
+  padding-right: var(--dm-space-4);
+  font-family: var(--dm-font-body);
+  font-size: var(--dm-font-size-sm);
+  color: var(--dm-color-navy);
+  background: #FFFFFF;
+  border: 1.5px solid var(--dm-color-border);
+  border-radius: var(--dm-radius-md);
+  outline: none;
+  transition: border-color var(--dm-transition-fast), box-shadow var(--dm-transition-fast);
+}
+
+.dm-signals-search-input:focus {
+  border-color: var(--dm-color-orange);
+  box-shadow: 0 0 0 3px rgba(242, 129, 29, 0.15);
+}
+
+.dm-search-icon {
+  position: absolute;
+  top: 50%;
+  left: 14px;
+  transform: translateY(-50%);
+  color: var(--dm-color-text-muted);
+  width: 18px;
+  height: 18px;
+  pointer-events: none;
+}
+
+/* Category Filter Tabs */
+.dm-signal-category-tabs {
+  display: flex;
+  gap: 6px;
+  background: var(--dm-color-surface-subtle);
+  padding: 4px;
+  border-radius: var(--dm-radius-full);
+  border: 1px solid var(--dm-color-border-subtle);
+  overflow-x: auto;
+}
+
+.dm-signal-cat-btn {
+  padding: 6px 16px;
+  border-radius: var(--dm-radius-full);
+  font-family: var(--dm-font-heading);
+  font-size: var(--dm-font-size-xs);
+  font-weight: 700;
+  color: var(--dm-color-text-secondary);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all var(--dm-transition-fast);
+  white-space: nowrap;
+}
+
+.dm-signal-cat-btn:hover {
+  color: var(--dm-color-navy);
+}
+
+.dm-signal-cat-btn.is-active {
+  background: var(--dm-color-navy);
+  color: #FFFFFF;
+  box-shadow: var(--dm-shadow-xs);
+}
+
+/* Signal Cards Grid */
+.dm-signals-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: var(--dm-space-4);
+}
+
+@media (min-width: 640px) {
+  .dm-signals-grid {
+    grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  }
+}
+
+/* Individual Signal Card */
+.dm-signal-card {
+  background: #FFFFFF;
+  border: 1px solid var(--dm-color-border-subtle);
+  border-radius: var(--dm-radius-lg);
+  padding: var(--dm-space-5) var(--dm-space-4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  cursor: pointer;
+  box-shadow: var(--dm-shadow-xs);
+  transition: transform var(--dm-transition-fast), box-shadow var(--dm-transition-fast), border-color var(--dm-transition-fast);
+}
+
+.dm-signal-card:hover,
+.dm-signal-card.is-inspected {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: var(--dm-shadow-md);
+  border-color: rgba(242, 129, 29, 0.4);
+  z-index: 10;
+}
+
+.dm-signal-icon-box {
+  width: 68px;
+  height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--dm-space-3);
+  transition: transform var(--dm-transition-fast);
+}
+
+.dm-signal-card:hover .dm-signal-icon-box {
+  transform: scale(1.08);
+}
+
+.dm-signal-name {
+  font-family: var(--dm-font-heading);
+  font-size: var(--dm-font-size-xs);
+  font-weight: 700;
+  color: var(--dm-color-navy);
+  line-height: 1.3;
+}
+
+/* Interactive Hover / Tap Tooltip Panel */
+.dm-signal-tooltip {
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%) translateY(6px);
+  width: 220px;
+  background: var(--dm-color-navy);
+  color: #FFFFFF;
+  padding: 10px 14px;
+  border-radius: var(--dm-radius-md);
+  box-shadow: 0 10px 25px -4px rgba(11, 30, 66, 0.4);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--dm-transition-fast), transform var(--dm-transition-fast);
+  z-index: 20;
+  text-align: left;
+}
+
+.dm-signal-tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+  border-top-color: var(--dm-color-navy);
+}
+
+.dm-signal-tooltip-title {
+  font-family: var(--dm-font-heading);
+  font-size: var(--dm-font-size-xs);
+  font-weight: 700;
+  color: var(--dm-color-orange);
+  margin-bottom: 4px;
+}
+
+.dm-signal-tooltip-meaning {
+  font-size: 11px;
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.dm-signal-card:hover .dm-signal-tooltip,
+.dm-signal-card.is-inspected .dm-signal-tooltip {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+  pointer-events: auto;
+}
+
+/* No results state */
+.dm-signals-empty-state {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: var(--dm-space-12) var(--dm-space-4);
+  color: var(--dm-color-text-muted);
+  display: none;
+}
+
+.dm-signals-empty-state.is-visible {
+  display: block;
+}

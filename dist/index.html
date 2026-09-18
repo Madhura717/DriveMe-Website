@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DriveMe — Learn. Drive. Grow. | Verified Driving Schools & Trainers</title>
+  <meta name="description" content="DriveMe connects learners with verified driving instructors for cars and two-wheelers. Doorstep convenience, live lesson tracking, and structured training to your official licence." />
+  <link rel="icon" type="image/jpeg" href="/driveme-logo.jpeg" />
+  <script type="module" crossorigin src="/assets/main-DR9UHjXP.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/main-BUpFMZEQ.css">
+</head>
+<body>
+
+  <!-- =========================================================
+       GLOBAL NAVIGATION (Reusable Component)
+       ========================================================= -->
+  <header class="dm-header" id="navbar" role="banner">
+    <div class="dm-container dm-nav-wrapper">
+      <!-- Left: DriveMe Logo -->
+      <a href="#home" class="dm-nav-brand" aria-label="DriveMe Home">
+        <img src="/driveme-logo.jpeg" alt="DriveMe - Learn. Drive. Grow." class="dm-nav-logo-img">
+      </a>
+
+      <!-- Center/Right: One-Word Nav Links -->
+      <nav class="dm-nav-nav" aria-label="Main Navigation">
+        <ul class="dm-nav-menu">
+          <li class="dm-nav-item"><a href="/" class="dm-nav-link is-active">Home</a></li>
+          <li class="dm-nav-item"><a href="/explore.html" class="dm-nav-link">Explore</a></li>
+          <li class="dm-nav-item"><a href="/learn.html" class="dm-nav-link">Learn</a></li>
+          <li class="dm-nav-item"><a href="/about.html" class="dm-nav-link">About</a></li>
+        </ul>
+      </nav>
+
+      <!-- Far Right: Desktop Action Buttons -->
+      <div class="dm-nav-actions">
+        <a href="#login" class="dm-btn dm-btn-ghost">Login</a>
+        <a href="#get-started" class="dm-btn dm-btn-primary">
+          Get Started
+          <svg class="dm-icon-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="4" y1="10" x2="16" y2="10"></line>
+            <polyline points="11 5 16 10 11 15"></polyline>
+          </svg>
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger Toggle -->
+      <button type="button" class="dm-nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="dm-toggle-bar"></span>
+        <span class="dm-toggle-bar"></span>
+        <span class="dm-toggle-bar"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Backdrop -->
+  <div class="dm-drawer-backdrop" id="drawerBackdrop"></div>
+
+  <!-- Mobile Slide-In Drawer -->
+  <div class="dm-drawer" id="mobileDrawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
+    <div class="dm-drawer-top">
+      <div class="dm-drawer-header">
+        <a href="/" class="dm-nav-brand" aria-label="DriveMe Home">
+          <img src="/driveme-logo.jpeg" alt="DriveMe - Learn. Drive. Grow." class="dm-drawer-logo-img">
+        </a>
+        <button type="button" class="dm-drawer-close" id="drawerClose" aria-label="Close menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <ul class="dm-drawer-menu">
+        <li><a href="/" class="dm-drawer-link is-active">Home</a></li>
+        <li><a href="/explore.html" class="dm-drawer-link">Explore</a></li>
+        <li><a href="/learn.html" class="dm-drawer-link">Learn</a></li>
+        <li><a href="/about.html" class="dm-drawer-link">About</a></li>
+      </ul>
+    </div>
+
+    <!-- Mobile Drawer Bottom Stacked Buttons -->
+    <div class="dm-drawer-footer">
+      <a href="#login" class="dm-btn dm-btn-outline dm-btn-full dm-drawer-btn">Login</a>
+      <a href="#get-started" class="dm-btn dm-btn-primary dm-btn-full dm-drawer-btn">Get Started</a>
+    </div>
+  </div>
+
+  <main>
+    <!-- =========================================================
+         HERO SECTION (SIGNATURE CAR DRIVE-IN MOMENT)
+         ========================================================= -->
+    <section class="dm-hero-home" id="home">
+      <div class="dm-container">
+        <div class="dm-hero-grid">
+          <!-- Left / Center-Left: Animated Car + Learner Stage -->
+          <div class="dm-hero-car-stage" id="heroCarStage">
+            <!-- Road Track Base -->
+            <div class="dm-hero-road-track" aria-hidden="true">
+              <div class="dm-hero-road-line"></div>
+            </div>
+
+            <!-- Realistic Car and Happy Learner Visual Container -->
+            <div class="dm-hero-car-vehicle" id="heroCarVehicle">
+              <img 
+                src="/images/hero-car-learner.jpg" 
+                alt="Happy learner driver standing beside a modern white training car holding keys" 
+                class="dm-hero-car-img" 
+                width="960" 
+                height="600"
+              />
+              <div class="dm-hero-car-floating-badge">
+                <span></span> Doorstep Pickup &bull; Dual-Control Certified
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Brand Copy & CTAs -->
+          <div class="dm-hero-content dm-reveal">
+            <div class="dm-hero-eyebrow">
+              Doorstep Driving Lessons &bull; Cars &amp; Two-Wheelers
+            </div>
+
+            <h1 class="dm-hero-headline">
+              Learn. Drive. <span class="dm-text-orange">Grow.</span>
+            </h1>
+
+            <p class="dm-hero-copy">
+              DriveMe connects learners with verified driving trainers for cars and two-wheelers. Enjoy doorstep convenience, live lesson tracking, and structured training straight to your official licence.
+            </p>
+
+            <div class="dm-hero-actions">
+              <a href="#get-started" class="dm-btn dm-btn-primary dm-btn-lg">
+                Get Started
+                <svg class="dm-icon-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="4" y1="10" x2="16" y2="10"></line>
+                  <polyline points="11 5 16 10 11 15"></polyline>
+                </svg>
+              </a>
+              <a href="#features" class="dm-btn dm-btn-outline dm-btn-lg">Explore Trainers</a>
+            </div>
+
+            <!-- Trust proof micro-badge -->
+            <div class="dm-hero-trust-proof">
+              <div class="dm-trust-stars" aria-label="5 star rating">
+                ★★★★★
+              </div>
+              <span><strong>4.9/5 rating</strong> from 45,000+ licensed learners</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         BELOW THE FOLD #1: TRUST-STAT STRIP
+         ========================================================= -->
+    <section class="dm-stat-strip-section" id="stats">
+      <div class="dm-container">
+        <div class="dm-stat-strip dm-reveal">
+          <!-- Stat 1: Verified Trainers -->
+          <div class="dm-stat-item">
+            <div class="dm-stat-icon-wrapper">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <polyline points="16 11 18 13 22 9"></polyline>
+              </svg>
+            </div>
+            <div class="dm-stat-info">
+              <div class="dm-stat-number-animated" data-counter="2400" data-suffix="+">0</div>
+              <span class="dm-stat-label-text">Verified Trainers</span>
+            </div>
+          </div>
+
+          <!-- Stat 2: Cars & Bikes Available -->
+          <div class="dm-stat-item">
+            <div class="dm-stat-icon-wrapper">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9C2.1 11.1 2 11.6 2 12v4c0 .6.4 1 1 1h2"></path>
+                <circle cx="7" cy="17" r="2"></circle>
+                <circle cx="17" cy="17" r="2"></circle>
+              </svg>
+            </div>
+            <div class="dm-stat-info">
+              <div class="dm-stat-number-animated" data-counter="1850" data-suffix="+">0</div>
+              <span class="dm-stat-label-text">Cars &amp; Bikes Available</span>
+            </div>
+          </div>
+
+          <!-- Stat 3: Learners Trained -->
+          <div class="dm-stat-item">
+            <div class="dm-stat-icon-wrapper">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+              </svg>
+            </div>
+            <div class="dm-stat-info">
+              <div class="dm-stat-number-animated" data-counter="45000" data-suffix="+">0</div>
+              <span class="dm-stat-label-text">Learners Trained</span>
+            </div>
+          </div>
+
+          <!-- Stat 4: Cities Covered -->
+          <div class="dm-stat-item">
+            <div class="dm-stat-icon-wrapper">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+            </div>
+            <div class="dm-stat-info">
+              <div class="dm-stat-number-animated" data-counter="28" data-suffix="+">0</div>
+              <span class="dm-stat-label-text">Cities Covered</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         BELOW THE FOLD #2: HOW DRIVEME WORKS (1 -> 4 STEP SECTION)
+         ========================================================= -->
+    <section class="dm-section dm-section--surface" id="how-it-works">
+      <div class="dm-container">
+        <div class="dm-section-header dm-section-header--center dm-reveal">
+          <span class="dm-eyebrow">Seamless Process</span>
+          <h2 class="dm-section-title">How DriveMe Works</h2>
+          <p class="dm-section-lead">
+            From your very first sign-up to holding your permanent driver's licence in hand in 4 simple steps.
+          </p>
+        </div>
+
+        <div class="dm-steps-timeline">
+          <!-- Step 1 -->
+          <div class="dm-step-item dm-reveal dm-stagger-1">
+            <div class="dm-step-header">
+              <div class="dm-step-number">1</div>
+              <div class="dm-step-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="8.5" cy="7" r="4"></circle>
+                  <line x1="20" y1="8" x2="20" y2="14"></line>
+                  <line x1="23" y1="11" x2="17" y2="11"></line>
+                </svg>
+              </div>
+            </div>
+            <h3 class="dm-step-title">Sign Up</h3>
+            <p class="dm-step-desc">
+              Create your learner profile in under 2 minutes. Specify your location, vehicle preference, and existing comfort level.
+            </p>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="dm-step-item dm-reveal dm-stagger-2">
+            <div class="dm-step-header">
+              <div class="dm-step-number">2</div>
+              <div class="dm-step-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                  <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                </svg>
+              </div>
+            </div>
+            <h3 class="dm-step-title">Pick Trainer &amp; Vehicle</h3>
+            <p class="dm-step-desc">
+              Browse background-verified instructors nearby. Select manual or automatic car, or scooter/bike with flexible hourly slots.
+            </p>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="dm-step-item dm-reveal dm-stagger-3">
+            <div class="dm-step-header">
+              <div class="dm-step-number">3</div>
+              <div class="dm-step-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon>
+                  <line x1="8" y1="2" x2="8" y2="18"></line>
+                  <line x1="16" y1="6" x2="16" y2="22"></line>
+                </svg>
+              </div>
+            </div>
+            <h3 class="dm-step-title">Learn With Live Tracking</h3>
+            <p class="dm-step-desc">
+              Enjoy doorstep pickup, GPS-tracked routes, dual-control safety, and a digital milestone scorecard updated after each ride.
+            </p>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="dm-step-item dm-reveal dm-stagger-4">
+            <div class="dm-step-header">
+              <div class="dm-step-number">4</div>
+              <div class="dm-step-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="8" r="7"></circle>
+                  <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                </svg>
+              </div>
+            </div>
+            <h3 class="dm-step-title">Get Licence-Ready</h3>
+            <p class="dm-step-desc">
+              Complete mock driving tests on designated test tracks, finish RTO/DMV paperwork guidance, and pass your exam on the first try.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         BELOW THE FOLD #3: THREE-PANEL FEATURE SECTION
+         "Everything You Need, In One App"
+         ========================================================= -->
+    <section class="dm-section" id="features">
+      <div class="dm-container">
+        <div class="dm-section-header dm-section-header--center dm-reveal">
+          <span class="dm-eyebrow">Comprehensive Ecosystem</span>
+          <h2 class="dm-section-title">Everything You Need, In One App</h2>
+          <p class="dm-section-lead">
+            Tailored learning paths for four-wheelers, two-wheelers, and dedicated expert guidance designed to build lifelong road confidence.
+          </p>
+        </div>
+
+        <div class="dm-feature-panel-grid">
+          <!-- Card 1: With a Car -->
+          <div class="dm-feature-card dm-reveal dm-stagger-1">
+            <div class="dm-feature-card-media">
+              <img 
+                src="/images/trainer-car-lesson.jpg" 
+                alt="Instructor calmly coaching learner in modern dual-control car" 
+                loading="lazy"
+                width="640"
+                height="400"
+              />
+              <div class="dm-feature-card-badge">
+                <span class="dm-badge dm-badge--available">4-Wheeler Training</span>
+              </div>
+            </div>
+
+            <div class="dm-feature-card-body">
+              <h3 class="dm-feature-card-title">With a Car</h3>
+              <p class="dm-feature-card-desc">
+                Comprehensive 4-wheeler lessons inside certified dual-control vehicles with dual-pedal emergency braking for maximum safety.
+              </p>
+
+              <ul class="dm-feature-list">
+                <li class="dm-feature-list-item">
+                  <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                  Manual &amp; Automatic transmission options
+                </li>
+                <li class="dm-feature-list-item">
+                  <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                  Parallel parking &amp; slope-hold mastery
+                </li>
+                <li class="dm-feature-list-item">
+                  <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                  Verified fleet inspected every 30 days
+                </li>
+              </ul>
+
+              <a href="#get-started" class="dm-btn dm-btn-primary dm-btn-sm" style="margin-top: auto;">
+                Explore Car Lessons
+              </a>
+            </div>
+          </div>
+
+          <!-- Card 2: On a Bike -->
+          <div class="dm-feature-card dm-reveal dm-stagger-2">
+            <div class="dm-feature-card-media">
+              <img 
+                src="/images/scooter-lesson.jpg" 
+                alt="Young woman learning to ride scooter on training ground with instructor" 
+                loading="lazy"
+                width="640"
+                height="400"
+              />
+              <div class="dm-feature-card-badge">
+                <span class="dm-badge dm-badge--vehicle">2-Wheeler Mastery</span>
+              </div>
+            </div>
+
+            <div class="dm-feature-card-body">
+              <h3 class="dm-feature-card-title">On a Bike</h3>
+              <p class="dm-feature-card-desc">
+                Conquer 2-wheeler balance, traffic filtering, and emergency maneuvers on paved training grounds and real city streets.
+              </p>
+
+              <ul class="dm-feature-list">
+                <li class="dm-feature-list-item">
+                  <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                  Gearless scooters and geared motorcycles
+                </li>
+                <li class="dm-feature-list-item">
+                  <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                  Cone slalom &amp; low-speed equilibrium drills
+                </li>
+                <li class="dm-feature-list-item">
+                  <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                  Complimentary helmet &amp; protective knee pads
+                </li>
+              </ul>
+
+              <a href="#get-started" class="dm-btn dm-btn-outline dm-btn-sm" style="margin-top: auto;">
+                Explore Bike Lessons
+              </a>
+            </div>
+          </div>
+
+          <!-- Card 3: With an Expert -->
+          <div class="dm-feature-card dm-reveal dm-stagger-3">
+            <div class="dm-feature-card-media">
+              <img 
+                src="/images/expert-trainer.jpg" 
+                alt="Certified driving coach holding digital scorecard next to training vehicle" 
+                loading="lazy"
+                width="640"
+                height="400"
+              />
+              <div class="dm-feature-card-badge">
+                <span class="dm-badge dm-badge--verified">Certified Pros</span>
+              </div>
+            </div>
+
+            <div class="dm-feature-card-body">
+              <h3 class="dm-feature-card-title">With an Expert</h3>
+              <p class="dm-feature-card-desc">
+                Learn from background-checked, government-accredited instructors chosen for patience, empathy, and clear communication.
+              </p>
+
+              <ul class="dm-feature-list">
+                <li class="dm-feature-list-item">
+                  <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                  Multi-lingual instruction in your native tongue
+                </li>
+                <li class="dm-feature-list-item">
+                  <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                  Certified female &amp; male instructors available
+                </li>
+                <li class="dm-feature-list-item">
+                  <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                  Digital skill scorecards after every session
+                </li>
+              </ul>
+
+              <a href="#get-started" class="dm-btn dm-btn-secondary dm-btn-sm" style="margin-top: auto;">
+                Find Nearby Trainer
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         BELOW THE FOLD #4: WHY CHOOSE DRIVEME (6-TILE GRID)
+         ========================================================= -->
+    <section class="dm-section dm-section--surface" id="why-us">
+      <div class="dm-container">
+        <div class="dm-section-header dm-section-header--center dm-reveal">
+          <span class="dm-eyebrow">The DriveMe Advantage</span>
+          <h2 class="dm-section-title">Why Choose DriveMe</h2>
+          <p class="dm-section-lead">
+            We reimagined driver training from the ground up: complete transparency, door-to-door convenience, and rigorous safety standards.
+          </p>
+        </div>
+
+        <div class="dm-why-grid">
+          <!-- Tile 1: Verified Trainers -->
+          <div class="dm-why-tile dm-reveal dm-stagger-1">
+            <div class="dm-why-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                <path d="M9 12l2 2 4-4"></path>
+              </svg>
+            </div>
+            <h3 class="dm-why-title">Verified Trainers</h3>
+            <p class="dm-why-desc">
+              Every trainer undergoes background screening, police verification, and a practical pedagogical assessment before taking learners.
+            </p>
+          </div>
+
+          <!-- Tile 2: Live Lesson Tracking -->
+          <div class="dm-why-tile dm-reveal dm-stagger-2">
+            <div class="dm-why-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
+              </svg>
+            </div>
+            <h3 class="dm-why-title">Live Lesson Tracking</h3>
+            <p class="dm-why-desc">
+              Track routes, session speed, and exact pickup telemetry in real time. Share live trip status with family for peace of mind.
+            </p>
+          </div>
+
+          <!-- Tile 3: Structured Curriculum to Licence -->
+          <div class="dm-why-tile dm-reveal dm-stagger-3">
+            <div class="dm-why-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+              </svg>
+            </div>
+            <h3 class="dm-why-title">Structured Curriculum to Licence</h3>
+            <p class="dm-why-desc">
+              A 20-milestone competency framework covering steering control, clutch release, hill stops, roundabouts, and night driving.
+            </p>
+          </div>
+
+          <!-- Tile 4: Flexible Scheduling -->
+          <div class="dm-why-tile dm-reveal dm-stagger-1">
+            <div class="dm-why-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+            </div>
+            <h3 class="dm-why-title">Flexible Scheduling</h3>
+            <p class="dm-why-desc">
+              Early morning 6 AM slots, post-work evening hours, or dedicated weekend bundles. Reschedule easily up to 12 hours prior.
+            </p>
+          </div>
+
+          <!-- Tile 5: RTO/Exam Guide Support -->
+          <div class="dm-why-tile dm-reveal dm-stagger-2">
+            <div class="dm-why-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+                <polyline points="10 9 9 9 8 9"></polyline>
+              </svg>
+            </div>
+            <h3 class="dm-why-title">RTO/Exam Guide Support</h3>
+            <p class="dm-why-desc">
+              Complete support with Learner's Licence applications, track simulation tests (8-track and H-track), and official test slot booking.
+            </p>
+          </div>
+
+          <!-- Tile 6: Transparent Pricing -->
+          <div class="dm-why-tile dm-reveal dm-stagger-3">
+            <div class="dm-why-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="12" y1="1" x2="12" y2="23"></line>
+                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+              </svg>
+            </div>
+            <h3 class="dm-why-title">Transparent Pricing</h3>
+            <p class="dm-why-desc">
+              Clear upfront rates with all fuel, insurance, and dual-control vehicle wear included. Never any surprise tips or unstated fees.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         BELOW THE FOLD #5: CLOSING CTA BAND
+         ========================================================= -->
+    <section class="dm-cta-band" id="get-started">
+      <div class="dm-container">
+        <div class="dm-cta-box dm-reveal">
+          <span class="dm-eyebrow" style="color: var(--dm-color-orange); margin-bottom: var(--dm-space-3);">
+            Take The Driver's Seat
+          </span>
+          <h2 class="dm-cta-headline">
+            Ready to start driving with confidence?
+          </h2>
+          <p class="dm-cta-subtitle">
+            Book your first doorstep trial session today. Experience certified instructors, dual-control safety, and stress-free driving.
+          </p>
+          <div class="dm-cta-actions">
+            <a href="#book" class="dm-btn dm-btn-primary dm-btn-lg">
+              Get Started Now
+              <svg class="dm-icon-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="4" y1="10" x2="16" y2="10"></line>
+                <polyline points="11 5 16 10 11 15"></polyline>
+              </svg>
+            </a>
+            <a href="tel:+18005553748" class="dm-btn dm-btn-outline dm-btn-lg" style="color: #FFFFFF; border-color: rgba(255, 255, 255, 0.3);">
+              Call Support: (800) 555-DRIVE
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================
+       GLOBAL FOOTER (Reusable Component)
+       ========================================================= -->
+  <footer class="dm-footer" id="footer" role="contentinfo">
+    <div class="dm-container">
+      <div class="dm-footer-grid">
+        <!-- Col 1: Brand & Tagline -->
+        <div class="dm-footer-brand">
+          <a href="#home" aria-label="DriveMe Home">
+            <div class="dm-footer-logo-badge">
+              <img src="/driveme-logo.jpeg" alt="DriveMe - Learn. Drive. Grow." class="dm-footer-logo-img">
+            </div>
+          </a>
+          <div class="dm-footer-tagline">Learn. Drive. Grow.</div>
+          <p class="dm-footer-desc">
+            Empowering modern learners with verified driving instructors, certified academies, and flexible car and two-wheeler training sessions.
+          </p>
+        </div>
+
+        <!-- Col 2: Quick Links -->
+        <div>
+          <h4 class="dm-footer-title">Quick Links</h4>
+          <ul class="dm-footer-links">
+            <li><a href="/" class="dm-footer-link">Home</a></li>
+            <li><a href="/explore.html" class="dm-footer-link">Explore</a></li>
+            <li><a href="/learn.html" class="dm-footer-link">Learn</a></li>
+            <li><a href="/about.html" class="dm-footer-link">About</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Contact Channels -->
+        <div>
+          <h4 class="dm-footer-title">Contact Us</h4>
+          <div class="dm-footer-contact">
+            <!-- Phone -->
+            <a href="tel:+18005553748" class="dm-contact-item">
+              <span class="dm-contact-icon">
+                <svg viewBox="0 0 24 24">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+              </span>
+              <span>+1 (800) 555-DRIVE</span>
+            </a>
+
+            <!-- Email -->
+            <a href="mailto:hello@driveme.com" class="dm-contact-item">
+              <span class="dm-contact-icon">
+                <svg viewBox="0 0 24 24">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+              </span>
+              <span>hello@driveme.com</span>
+            </a>
+
+            <!-- WhatsApp -->
+            <a href="https://wa.me/18005553748" target="_blank" rel="noopener noreferrer" class="dm-contact-item">
+              <span class="dm-contact-icon dm-contact-icon--whatsapp">
+                <svg viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                  <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+                </svg>
+              </span>
+              <span>WhatsApp Support</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Col 4: Community & Socials -->
+        <div>
+          <h4 class="dm-footer-title">Connect</h4>
+          <p style="font-size: var(--dm-font-size-xs); color: rgba(255, 255, 255, 0.65); margin-bottom: var(--dm-space-3);">
+            Follow our learning community for driving safety tips, road test updates, and student stories.
+          </p>
+          <div class="dm-footer-socials">
+            <!-- Instagram -->
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="dm-social-btn" aria-label="Instagram">
+              <svg viewBox="0 0 24 24">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" fill="none" stroke="currentColor" stroke-width="2"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="currentColor" stroke-width="2.5"></line>
+              </svg>
+            </a>
+
+            <!-- LinkedIn -->
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="dm-social-btn" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24">
+                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+              </svg>
+            </a>
+
+            <!-- Facebook -->
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="dm-social-btn" aria-label="Facebook">
+              <svg viewBox="0 0 24 24">
+                <path d="M9 8H6v4h3v12h5V12h3.642L18 8h-4V6.333C14 5.374 14.5 5 15.5 5H18V0h-3.808C10.595 0 9 1.582 9 4.615V8z"/>
+              </svg>
+            </a>
+          </div>
+
+          <div class="dm-footer-app">
+            <h4 class="dm-footer-title">Get the DriveMe App</h4>
+            <div class="dm-footer-app-badges">
+              <a href="#" class="dm-app-badge" aria-label="Download on the App Store">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.1.8 1.21-.25 2.37-.93 3.66-.84 1.55.13 2.72.74 3.48 1.85-3.2 1.92-2.44 6.13.49 7.31-.59 1.55-1.36 3.09-2.73 3.85zM12.05 7.25C11.9 4.94 13.77 3.03 15.92 2.9c.3 2.67-2.42 4.67-3.87 4.35z" /></svg>
+                <span><small>Download on the</small>App Store</span>
+              </a>
+              <a href="#" class="dm-app-badge" aria-label="Get it on Google Play">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 2.75c-.31.33-.5.84-.5 1.5v15.5c0 .66.19 1.17.5 1.5L14.25 12 3.5 2.75zM15 12.65l2.7 2.35-11.95 6.85L15 12.65zM15 11.35L5.75 2.15l11.95 6.85L15 11.35zM18.6 9.55l2.1 1.2c.6.34.6 1.16 0 1.5l-2.1 1.2-2.95-2.6 2.95-1.3z" /></svg>
+                <span><small>Get it on</small>Google Play</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="dm-footer-bottom">
+        <div>
+          &copy; <span id="current-year">2026</span> DriveMe Inc. All rights reserved. "Learn. Drive. Grow." is a registered trademark.
+        </div>
+        <div class="dm-footer-legal">
+          <a href="#privacy">Privacy Policy</a>
+          <a href="#terms">Terms of Service</a>
+          <a href="#safety">Safety Standards</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

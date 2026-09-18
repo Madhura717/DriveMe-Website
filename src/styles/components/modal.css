@@ -1,0 +1,152 @@
+/**
+ * DriveMe "Get Started" Popup / Modal Styles (Prompt 5)
+ * Small, centered modal, rounded corners, soft shadow,
+ * subtle fade+scale-in entrance, dimmed blur overlay.
+ */
+
+/* Modal Backdrop Overlay */
+.dm-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(11, 30, 66, 0.55);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: var(--dm-z-modal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--dm-space-4);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity var(--dm-transition-base), visibility var(--dm-transition-base);
+}
+
+.dm-modal-backdrop.is-visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* Modal Dialog Window */
+.dm-modal-dialog {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  background-color: var(--dm-color-surface);
+  border-radius: var(--dm-radius-lg); /* 16px */
+  padding: clamp(2rem, 5vw, 2.5rem);
+  box-shadow: 0 24px 48px -12px rgba(11, 30, 66, 0.25), 0 12px 24px -6px rgba(11, 30, 66, 0.15);
+  border: 1px solid var(--dm-color-border-subtle);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transform: scale(0.92) translateY(14px);
+  opacity: 0;
+  transition: transform 320ms cubic-bezier(0.16, 1, 0.3, 1), opacity 260ms ease;
+  overflow: hidden;
+}
+
+.dm-modal-backdrop.is-visible .dm-modal-dialog {
+  transform: scale(1) translateY(0);
+  opacity: 1;
+}
+
+/* Close (x) Button */
+.dm-modal-close-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--dm-radius-full);
+  background: var(--dm-color-surface-subtle);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--dm-color-text-secondary);
+  cursor: pointer;
+  transition: all var(--dm-transition-fast);
+  z-index: 10;
+}
+
+.dm-modal-close-btn:hover {
+  background-color: rgba(242, 129, 29, 0.1);
+  color: var(--dm-color-orange);
+  transform: rotate(90deg);
+}
+
+.dm-modal-close-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Centered Logo at Top */
+.dm-modal-logo {
+  height: 34px;
+  width: auto;
+  margin-bottom: var(--dm-space-4);
+}
+
+.dm-modal-logo-img {
+  height: 90px;
+  width: auto;
+  object-fit: contain;
+  margin: 0 auto var(--dm-space-4);
+  display: block;
+  border-radius: var(--dm-radius-md);
+}
+
+/* Modal Typography */
+.dm-modal-headline {
+  font-family: var(--dm-font-heading);
+  font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+  font-weight: var(--dm-font-weight-extrabold);
+  color: var(--dm-color-navy);
+  line-height: 1.25;
+  margin-bottom: var(--dm-space-2);
+}
+
+.dm-modal-copy {
+  font-size: var(--dm-font-size-sm);
+  color: var(--dm-color-text-secondary);
+  line-height: 1.55;
+  margin-bottom: var(--dm-space-6);
+  max-width: 360px;
+}
+
+/* Modal Actions Stack */
+.dm-modal-actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--dm-space-3);
+  width: 100%;
+}
+
+.dm-modal-actions .dm-btn {
+  width: 100%;
+  padding-block: 0.85rem;
+}
+
+/* Action 3: "Maybe Later" plain text link */
+.dm-modal-dismiss-link {
+  font-size: var(--dm-font-size-xs);
+  font-weight: var(--dm-font-weight-medium);
+  color: var(--dm-color-text-muted);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  margin-top: var(--dm-space-1);
+  text-decoration: none;
+  transition: color var(--dm-transition-fast);
+}
+
+.dm-modal-dismiss-link:hover {
+  color: var(--dm-color-navy);
+  text-decoration: underline;
+}

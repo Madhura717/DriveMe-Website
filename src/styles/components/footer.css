@@ -1,0 +1,297 @@
+/**
+ * DriveMe Global Footer Component
+ * Deep navy background, warm orange accents, responsive layout
+ */
+
+.dm-footer {
+  background-color: var(--dm-color-navy);
+  color: rgba(255, 255, 255, 0.8);
+  padding-top: clamp(3.5rem, 6vw, var(--dm-space-16));
+  padding-bottom: var(--dm-space-8);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  position: relative;
+}
+
+.dm-footer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--dm-space-10);
+  margin-bottom: clamp(2.5rem, 5vw, var(--dm-space-12));
+}
+
+@media (min-width: 768px) {
+  .dm-footer-grid {
+    grid-template-columns: 1.5fr 1fr 1.2fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .dm-footer-grid {
+    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  }
+}
+
+/* Brand Column */
+.dm-footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: var(--dm-space-4);
+}
+
+.dm-footer-logo-svg {
+  height: 38px;
+  width: auto;
+}
+
+.dm-footer-logo-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #FFFFFF;
+  padding: 8px 14px;
+  border-radius: var(--dm-radius-md);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  width: fit-content;
+  transition: transform var(--dm-transition-fast), box-shadow var(--dm-transition-fast);
+}
+
+.dm-footer-logo-badge:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+}
+
+.dm-footer-logo-img {
+  height: 48px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+}
+
+.dm-footer-tagline {
+  font-family: var(--dm-font-heading);
+  font-size: var(--dm-font-size-base);
+  font-weight: var(--dm-font-weight-semibold);
+  color: var(--dm-color-orange);
+  letter-spacing: 0.04em;
+}
+
+.dm-footer-desc {
+  font-size: var(--dm-font-size-sm);
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.65);
+  max-width: 320px;
+}
+
+/* Footer Section Headings */
+.dm-footer-title {
+  font-family: var(--dm-font-heading);
+  font-size: var(--dm-font-size-base);
+  font-weight: var(--dm-font-weight-bold);
+  color: var(--dm-color-surface);
+  margin-bottom: var(--dm-space-4);
+  letter-spacing: -0.01em;
+}
+
+/* Quick Links */
+.dm-footer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--dm-space-3);
+}
+
+.dm-footer-link {
+  font-size: var(--dm-font-size-sm);
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  transition: color var(--dm-transition-fast), transform var(--dm-transition-fast);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--dm-space-2);
+}
+
+.dm-footer-link:hover {
+  color: var(--dm-color-orange);
+  transform: translateX(3px);
+}
+
+/* Contact Info */
+.dm-footer-contact {
+  display: flex;
+  flex-direction: column;
+  gap: var(--dm-space-3);
+}
+
+.dm-contact-item {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--dm-space-3);
+  font-size: var(--dm-font-size-sm);
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+  transition: color var(--dm-transition-fast);
+}
+
+.dm-contact-item:hover {
+  color: var(--dm-color-orange);
+}
+
+.dm-contact-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: var(--dm-radius-sm);
+  background-color: rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background-color var(--dm-transition-fast), color var(--dm-transition-fast);
+}
+
+.dm-contact-item:hover .dm-contact-icon {
+  background-color: var(--dm-color-orange);
+  color: var(--dm-color-surface);
+}
+
+.dm-contact-icon svg {
+  width: 16px;
+  height: 16px;
+  stroke: currentColor;
+  fill: none;
+}
+
+.dm-contact-icon--whatsapp {
+  color: #25D366;
+}
+
+.dm-contact-item:hover .dm-contact-icon--whatsapp {
+  background-color: #25D366;
+  color: #FFFFFF;
+}
+
+/* Social Icons */
+.dm-footer-socials {
+  display: flex;
+  align-items: center;
+  gap: var(--dm-space-2);
+  margin-top: var(--dm-space-2);
+}
+
+.dm-footer-app {
+  margin-top: var(--dm-space-6);
+}
+
+.dm-footer-app .dm-footer-title {
+  margin-bottom: var(--dm-space-3);
+}
+
+.dm-footer-app-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--dm-space-2);
+}
+
+.dm-app-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 148px;
+  padding: 7px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: var(--dm-radius-sm);
+  color: #FFFFFF;
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.06);
+  transition: background-color var(--dm-transition-fast), border-color var(--dm-transition-fast), transform var(--dm-transition-fast);
+}
+
+.dm-app-badge:hover {
+  background: rgba(242, 129, 29, 0.16);
+  border-color: var(--dm-color-orange);
+  transform: translateY(-2px);
+}
+
+.dm-app-badge svg {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  fill: currentColor;
+}
+
+.dm-app-badge span {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--dm-font-heading);
+  font-size: 0.78rem;
+  font-weight: var(--dm-font-weight-bold);
+  line-height: 1.15;
+  white-space: nowrap;
+}
+
+.dm-app-badge small {
+  font-family: var(--dm-font-body);
+  font-size: 0.58rem;
+  font-weight: 400;
+  line-height: 1.2;
+  color: rgba(255, 255, 255, 0.68);
+}
+
+.dm-social-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: var(--dm-radius-md);
+  background-color: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.75);
+  transition: all var(--dm-transition-fast);
+}
+
+.dm-social-btn:hover {
+  background-color: var(--dm-color-orange);
+  border-color: var(--dm-color-orange);
+  color: var(--dm-color-surface);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(242, 129, 29, 0.35);
+}
+
+.dm-social-btn svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
+/* Footer Bottom Bar */
+.dm-footer-bottom {
+  padding-top: var(--dm-space-6);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: var(--dm-space-4);
+  align-items: center;
+  justify-content: space-between;
+  font-size: var(--dm-font-size-xs);
+  color: rgba(255, 255, 255, 0.5);
+}
+
+@media (min-width: 640px) {
+  .dm-footer-bottom {
+    flex-direction: row;
+  }
+}
+
+.dm-footer-legal {
+  display: flex;
+  gap: var(--dm-space-4);
+}
+
+.dm-footer-legal a {
+  color: rgba(255, 255, 255, 0.5);
+  transition: color var(--dm-transition-fast);
+}
+
+.dm-footer-legal a:hover {
+  color: var(--dm-color-orange);
+}

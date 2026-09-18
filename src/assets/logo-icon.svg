@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 48" fill="none" role="img" aria-label="DriveMe Icon">
+  <!-- Outer Navy 'D' Contour -->
+  <path d="M 6 6 C 6 3.79 7.79 2 10 2 L 25 2 C 37.15 2 46 10.85 46 23 C 46 35.15 37.15 44 25 44 L 10 44 C 7.79 44 6 42.21 6 40 L 6 6 Z" fill="#0B1E42"/>
+  <!-- Inner Cutout -->
+  <path d="M 16 11 L 24 11 C 31.18 11 36.5 16.32 36.5 23 C 36.5 29.68 31.18 35 24 35 L 16 35 L 16 11 Z" fill="#FAFAFC"/>
+  <!-- Orange Road cutting through D -->
+  <path d="M 2 27 C 12 27 18 19 32 19 C 39 19 43 23 50 25 L 49 31 C 42 29 37 25 31 25 C 18 25 12 33 2 33 Z" fill="#F2811D"/>
+  <!-- Road center dashed marking -->
+  <path d="M 3 30 C 12 30 18 22 32 22 C 38 22 43 25 48 28" stroke="#FFFFFF" stroke-width="1.6" stroke-dasharray="3.5 2.5" stroke-linecap="round" fill="none"/>
+</svg>

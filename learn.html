@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Learn on DriveMe — Curriculum, DL Test Tracks &amp; Traffic Signals</title>
+  <meta name="description" content="Master driving with DriveMe's 20-module structured curriculum, interactive official '8' and 'H' test tracks, and complete searchable traffic signals library." />
+  <link rel="icon" type="image/jpeg" href="/driveme-logo.jpeg" />
+  <link rel="stylesheet" href="/src/styles/main.css" />
+</head>
+<body>
+
+  <!-- =========================================================
+       GLOBAL NAVIGATION (Reusable Component)
+       ========================================================= -->
+  <header class="dm-header" id="navbar" role="banner">
+    <div class="dm-container dm-nav-wrapper">
+      <!-- Left: DriveMe Logo -->
+      <a href="/" class="dm-nav-brand" aria-label="DriveMe Home">
+        <img src="/driveme-logo.jpeg" alt="DriveMe - Learn. Drive. Grow." class="dm-nav-logo-img">
+      </a>
+
+      <!-- Center/Right: Nav Links -->
+      <nav class="dm-nav-nav" aria-label="Main Navigation">
+        <ul class="dm-nav-menu">
+          <li class="dm-nav-item"><a href="/" class="dm-nav-link">Home</a></li>
+          <li class="dm-nav-item"><a href="/explore.html" class="dm-nav-link">Explore</a></li>
+          <li class="dm-nav-item"><a href="/learn.html" class="dm-nav-link is-active">Learn</a></li>
+          <li class="dm-nav-item"><a href="/about.html" class="dm-nav-link">About</a></li>
+        </ul>
+      </nav>
+
+      <!-- Far Right: Action Buttons -->
+      <div class="dm-nav-actions">
+        <a href="#tracks" class="dm-btn dm-btn-ghost">Test Tracks</a>
+        <a href="/explore.html#learners" class="dm-btn dm-btn-primary">
+          Get Started
+          <svg class="dm-icon-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="4" y1="10" x2="16" y2="10"></line>
+            <polyline points="11 5 16 10 11 15"></polyline>
+          </svg>
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger Toggle -->
+      <button type="button" class="dm-nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="dm-toggle-bar"></span>
+        <span class="dm-toggle-bar"></span>
+        <span class="dm-toggle-bar"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Backdrop -->
+  <div class="dm-drawer-backdrop" id="drawerBackdrop"></div>
+
+  <!-- Mobile Slide-In Drawer -->
+  <div class="dm-drawer" id="mobileDrawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
+    <div class="dm-drawer-top">
+      <div class="dm-drawer-header">
+        <a href="/" class="dm-nav-brand" aria-label="DriveMe Home">
+          <img src="/driveme-logo.jpeg" alt="DriveMe - Learn. Drive. Grow." class="dm-drawer-logo-img">
+        </a>
+        <button type="button" class="dm-drawer-close" id="drawerClose" aria-label="Close menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <ul class="dm-drawer-menu">
+        <li><a href="/" class="dm-drawer-link">Home</a></li>
+        <li><a href="/explore.html" class="dm-drawer-link">Explore</a></li>
+        <li><a href="/learn.html" class="dm-drawer-link is-active">Learn</a></li>
+        <li><a href="/about.html" class="dm-drawer-link">About</a></li>
+      </ul>
+    </div>
+
+    <!-- Mobile Drawer Bottom Stacked Buttons -->
+    <div class="dm-drawer-footer">
+      <a href="#tracks" class="dm-btn dm-btn-outline dm-btn-full dm-drawer-btn">Test Tracks</a>
+      <a href="/explore.html#learners" class="dm-btn dm-btn-primary dm-btn-full dm-drawer-btn">Get Started</a>
+    </div>
+  </div>
+
+  <main>
+    <!-- =========================================================
+         PART 1: "WHAT YOU'LL LEARN ON DRIVEME"
+         ========================================================= -->
+    <section class="dm-learn-hero" id="curriculum">
+      <div class="dm-container">
+        <div class="dm-learn-header dm-reveal">
+          <span class="dm-eyebrow">Part 1: Structured App Mastery</span>
+          <h1 style="font-size: clamp(2.25rem, 4.2vw, 3.4rem); margin-bottom: var(--dm-space-3);">
+            What You'll Learn on <span style="color: var(--dm-color-orange);">DriveMe</span>
+          </h1>
+          <p class="dm-lead" style="margin-bottom: 0;">
+            A structured curriculum engineered to take you from first pedal press to official licence holder without stress or skipped fundamentals.
+          </p>
+        </div>
+
+        <!-- 4 App Capability Cards -->
+        <div class="dm-curriculum-grid">
+          <!-- Card 1: Goal-Based Learning Path -->
+          <div class="dm-curriculum-card dm-reveal dm-stagger-1">
+            <div class="dm-curriculum-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polygon points="12 8 8 12 12 16 16 12 12 8"></polygon>
+              </svg>
+            </div>
+            <h3 class="dm-curriculum-title">Goal-Based Path</h3>
+            <p class="dm-curriculum-desc">
+              Choose your exact objective: Learner's Licence paperwork, 2-wheeler scooter balance, 4-wheeler manual/auto, or combined dual-licence track.
+            </p>
+            <div class="dm-curriculum-meta">
+              <span class="dm-badge dm-badge--vehicle">Documentation &bull; 2W &bull; 4W</span>
+            </div>
+          </div>
+
+          <!-- Card 2: Progress Tracking & Locked/Unlocked Modules -->
+          <div class="dm-curriculum-card dm-reveal dm-stagger-2">
+            <div class="dm-curriculum-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+              </svg>
+            </div>
+            <h3 class="dm-curriculum-title">20-Module Unlock</h3>
+            <p class="dm-curriculum-desc">
+              Track your exact completion percentage. Master cockpit drill and clutch release to unlock roundabouts, parallel parking, and highway merging.
+            </p>
+            <div class="dm-curriculum-meta">
+              <div class="dm-flex dm-justify-between dm-items-center" style="font-size: 11px; margin-bottom: 4px;">
+                <span>Current Tier</span>
+                <strong style="color: var(--dm-color-orange);">Level 4 Unlocked</strong>
+              </div>
+              <div class="dm-progress-bar-wrap">
+                <div class="dm-progress-bar-fill" style="width: 65%;"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3: Duration-Based Booking -->
+          <div class="dm-curriculum-card dm-reveal dm-stagger-3">
+            <div class="dm-curriculum-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+            </div>
+            <h3 class="dm-curriculum-title">Duration Booking</h3>
+            <p class="dm-curriculum-desc">
+              Tailor each session length to your schedule. Choose 1-hour skill focus, 2-hour city traffic sessions, or 4-hour weekend booster drives.
+            </p>
+            <div class="dm-curriculum-meta">
+              <span class="dm-badge dm-badge--available">1 hr &bull; 2 hrs &bull; 4 hrs Slots</span>
+            </div>
+          </div>
+
+          <!-- Card 4: Live-Tracked Instructor & Handoff -->
+          <div class="dm-curriculum-card dm-reveal dm-stagger-4">
+            <div class="dm-curriculum-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+            </div>
+            <h3 class="dm-curriculum-title">Live Tracking &amp; OTP</h3>
+            <p class="dm-curriculum-desc">
+              Your trainer drives to your chosen doorstep. Authenticate the session with a 4-digit start-code and share real-time GPS routes with loved ones.
+            </p>
+            <div class="dm-curriculum-meta">
+              <span class="dm-badge dm-badge--verified">Secure Handoff Protocol</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         PART 2: "EXAM & LLR SUPPORT" (TEST TRACKS + SIGNALS)
+         ========================================================= -->
+    <section class="dm-exam-support-section" id="exam-support">
+      <div class="dm-container">
+        <div class="dm-exam-header dm-reveal">
+          <span class="dm-eyebrow">Part 2: Official Licence Prep</span>
+          <h2 class="dm-section-title" style="font-size: clamp(2.1rem, 3.8vw, 3rem);">
+            Exam &amp; LLR Support
+          </h2>
+          <p class="dm-section-lead">
+            Everything you need before your driving test. Master the automated track geometries and decode every mandatory traffic signal with confidence.
+          </p>
+        </div>
+
+        <!-- =========================================================
+             DL TEST TRACKS BLOCK ("8" Track & "H" Track Accordion)
+             ========================================================= -->
+        <div class="dm-tracks-block" id="tracks">
+          <div style="text-align: center; margin-bottom: var(--dm-space-6);" class="dm-reveal">
+            <h3 style="font-size: var(--dm-font-size-2xl); color: var(--dm-color-navy); margin-bottom: 6px;">
+              Official DL Automated Test Tracks
+            </h3>
+            <p style="font-size: var(--dm-font-size-sm); color: var(--dm-color-text-secondary);">
+              Tap a track to explore the official geometry, turning radii, and zero-fault maneuver guidelines.
+            </p>
+          </div>
+
+          <div class="dm-tracks-accordion">
+            <!-- TRACK 1: THE "8" TRACK -->
+            <div class="dm-track-card is-active dm-reveal">
+              <!-- Clickable Card Header -->
+              <div class="dm-track-card-header" role="button" aria-expanded="true">
+                <div class="dm-track-header-left">
+                  <div class="dm-track-pill-num">8</div>
+                  <div class="dm-track-header-title">
+                    <h3>The "8" Track (Figure-Eight)</h3>
+                    <span>Primary automated skill test for Two-Wheelers &amp; Light Motor Vehicles (LMV)</span>
+                  </div>
+                </div>
+                <div class="dm-track-header-right">
+                  <span class="dm-badge dm-badge--vehicle">Intermediate</span>
+                  <div class="dm-track-toggle-btn" aria-label="Toggle track details">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                      <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Track Detail Body -->
+              <div class="dm-track-detail-body">
+                <div class="dm-track-detail-content">
+                  <!-- Vector Diagram of 8-Track -->
+                  <div class="dm-track-diagram-wrapper">
+                    <svg class="dm-track-svg" viewBox="0 0 400 250" fill="none" role="img" aria-label="Figure Eight Track Diagram">
+                      <!-- Asphalt Track Surface Background -->
+                      <rect width="400" height="250" rx="16" fill="#07132B"/>
+                      
+                      <!-- Track Loop 1 (Left Circle) -->
+                      <circle cx="140" cy="125" r="75" stroke="#334155" stroke-width="36" fill="none"/>
+                      <circle cx="140" cy="125" r="75" stroke="#FFFFFF" stroke-width="2" stroke-dasharray="6 4" fill="none"/>
+
+                      <!-- Track Loop 2 (Right Circle) -->
+                      <circle cx="260" cy="125" r="75" stroke="#334155" stroke-width="36" fill="none"/>
+                      <circle cx="260" cy="125" r="75" stroke="#FFFFFF" stroke-width="2" stroke-dasharray="6 4" fill="none"/>
+
+                      <!-- Central Overlap Bridge / Crossing -->
+                      <path d="M 65 125 A 75 75 0 0 1 200 125 A 75 75 0 0 0 335 125" stroke="#F2811D" stroke-width="4" fill="none"/>
+                      <path d="M 335 125 A 75 75 0 0 1 200 125 A 75 75 0 0 0 65 125" stroke="#F2811D" stroke-width="4" stroke-dasharray="8 4" fill="none"/>
+
+                      <!-- Entry Arrow -->
+                      <g>
+                        <rect x="25" y="112" width="40" height="26" rx="4" fill="#10B981"/>
+                        <text x="32" y="129" fill="#FFFFFF" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="11">START</text>
+                        <line x1="45" y1="125" x2="65" y2="125" stroke="#10B981" stroke-width="3" marker-end="url(#arrowhead)"/>
+                      </g>
+
+                      <!-- Center Transition Node -->
+                      <circle cx="200" cy="125" r="8" fill="#F2811D"/>
+                      <text x="185" y="150" fill="#CBD5E1" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" font-weight="600">CROSSOVER</text>
+
+                      <!-- Exit Arrow -->
+                      <g>
+                        <rect x="335" y="112" width="38" height="26" rx="4" fill="#F59E0B"/>
+                        <text x="343" y="129" fill="#FFFFFF" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="11">EXIT</text>
+                      </g>
+
+                      <!-- Dimension annotations -->
+                      <text x="105" y="70" fill="#94A3B8" font-family="monospace" font-size="10">R = 4.5m</text>
+                      <text x="240" y="70" fill="#94A3B8" font-family="monospace" font-size="10">Width = 2.7m</text>
+                    </svg>
+
+                    <div class="dm-diagram-legend">
+                      <div class="dm-legend-item">
+                        <span class="dm-legend-dot" style="background-color: #10B981;"></span> Entry / Start Point
+                      </div>
+                      <div class="dm-legend-item">
+                        <span class="dm-legend-dot" style="background-color: #F2811D;"></span> Driving Trajectory
+                      </div>
+                      <div class="dm-legend-item">
+                        <span class="dm-legend-dot" style="background-color: #F59E0B;"></span> Exit Point
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Spec & Requirements Breakdown -->
+                  <div class="dm-track-specs-panel">
+                    <div class="dm-spec-metrics-grid">
+                      <div class="dm-spec-metric-box">
+                        <span>Track Lane Width</span>
+                        <strong>2.70 Meters</strong>
+                      </div>
+                      <div class="dm-spec-metric-box">
+                        <span>Center Turn Radius</span>
+                        <strong>4.50 Meters</strong>
+                      </div>
+                      <div class="dm-spec-metric-box">
+                        <span>Speed Window</span>
+                        <strong>10–15 km/h</strong>
+                      </div>
+                      <div class="dm-spec-metric-box">
+                        <span>Max Time Limit</span>
+                        <strong>120 Seconds</strong>
+                      </div>
+                    </div>
+
+                    <h4 style="font-size: var(--dm-font-size-sm); color: var(--dm-color-navy); margin-top: 4px;">
+                      Official Examination Checklist:
+                    </h4>
+
+                    <ul class="dm-maneuvers-list">
+                      <li class="dm-maneuver-item">
+                        <span class="dm-maneuver-num">1</span>
+                        <span><strong>Entry:</strong> Enter smoothly at the green marker in 1st gear. Maintain steady clutch friction without accelerating aggressively.</span>
+                      </li>
+                      <li class="dm-maneuver-item">
+                        <span class="dm-maneuver-num">2</span>
+                        <span><strong>Left Loop:</strong> Follow the outer perimeter of the first loop clockwise. Keep wheels centered; touching yellow boundary lines triggers automated sensor penalties.</span>
+                      </li>
+                      <li class="dm-maneuver-item">
+                        <span class="dm-maneuver-num">3</span>
+                        <span><strong>Crossover Transition:</strong> Straighten wheels momentarily at the center intersection before engaging opposite steering lock for the counter-clockwise loop.</span>
+                      </li>
+                      <li class="dm-maneuver-item">
+                        <span class="dm-maneuver-num">4</span>
+                        <span><strong>Zero Touchdown / Stall:</strong> For two-wheelers, zero foot-to-ground touches are permitted. For cars, engine stalling causes immediate retest.</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- TRACK 2: THE "H" TRACK -->
+            <div class="dm-track-card dm-reveal">
+              <!-- Clickable Card Header -->
+              <div class="dm-track-card-header" role="button" aria-expanded="false">
+                <div class="dm-track-header-left">
+                  <div class="dm-track-pill-num">H</div>
+                  <div class="dm-track-header-title">
+                    <h3>The "H" Track (Reverse Bay &amp; Parallel Maneuver)</h3>
+                    <span>Core test track for Car reverse control, parallel garage parking, and mirror discipline</span>
+                  </div>
+                </div>
+                <div class="dm-track-header-right">
+                  <span class="dm-badge dm-badge--booked">Advanced</span>
+                  <div class="dm-track-toggle-btn" aria-label="Toggle track details">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                      <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Track Detail Body -->
+              <div class="dm-track-detail-body">
+                <div class="dm-track-detail-content">
+                  <!-- Vector Diagram of H-Track -->
+                  <div class="dm-track-diagram-wrapper">
+                    <svg class="dm-track-svg" viewBox="0 0 400 250" fill="none" role="img" aria-label="H Track Parallel Reverse Diagram">
+                      <!-- Asphalt Track Surface Background -->
+                      <rect width="400" height="250" rx="16" fill="#07132B"/>
+
+                      <!-- H Track Bays Layout -->
+                      <!-- Left Vertical Bay -->
+                      <rect x="80" y="30" width="60" height="190" rx="6" fill="#1E293B" stroke="#475569" stroke-width="3"/>
+                      <!-- Right Vertical Bay -->
+                      <rect x="260" y="30" width="60" height="190" rx="6" fill="#1E293B" stroke="#475569" stroke-width="3"/>
+                      <!-- Horizontal Center Connecting Corridor -->
+                      <rect x="140" y="100" width="120" height="50" fill="#1E293B" stroke="#475569" stroke-width="3"/>
+                      
+                      <!-- Remove overlapping borders for seamless corridor -->
+                      <rect x="135" y="102" width="130" height="46" fill="#1E293B"/>
+
+                      <!-- Driving Trajectory Lines -->
+                      <!-- 1. Forward into Left-Top Bay -->
+                      <path d="M 110 210 L 110 50" stroke="#10B981" stroke-width="3.5" stroke-linecap="round"/>
+                      <!-- 2. Reverse through Cross to Right-Bottom Bay -->
+                      <path d="M 110 50 L 110 125 L 290 125 L 290 210" stroke="#F2811D" stroke-width="3.5" stroke-dasharray="6 4" stroke-linecap="round"/>
+                      <!-- 3. Forward into Right-Top Exit -->
+                      <path d="M 290 210 L 290 50" stroke="#F59E0B" stroke-width="3.5" stroke-linecap="round"/>
+
+                      <!-- Start Marker -->
+                      <rect x="85" y="185" width="50" height="22" rx="4" fill="#10B981"/>
+                      <text x="96" y="200" fill="#FFFFFF" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="10">START</text>
+
+                      <!-- Reverse Point Marker -->
+                      <circle cx="110" cy="55" r="6" fill="#F2811D"/>
+
+                      <!-- Exit Marker -->
+                      <rect x="265" y="42" width="50" height="22" rx="4" fill="#F59E0B"/>
+                      <text x="278" y="57" fill="#FFFFFF" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="10">EXIT</text>
+
+                      <!-- Dimensions -->
+                      <text x="175" y="90" fill="#94A3B8" font-family="monospace" font-size="10">Width = 3.0m</text>
+                      <text x="175" y="175" fill="#94A3B8" font-family="monospace" font-size="10">Length = 12.0m</text>
+                    </svg>
+
+                    <div class="dm-diagram-legend">
+                      <div class="dm-legend-item">
+                        <span class="dm-legend-dot" style="background-color: #10B981;"></span> Forward 1st Gear
+                      </div>
+                      <div class="dm-legend-item">
+                        <span class="dm-legend-dot" style="background-color: #F2811D;"></span> Reverse Gear S-Curve
+                      </div>
+                      <div class="dm-legend-item">
+                        <span class="dm-legend-dot" style="background-color: #F59E0B;"></span> Forward Exit
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Spec & Requirements Breakdown -->
+                  <div class="dm-track-specs-panel">
+                    <div class="dm-spec-metrics-grid">
+                      <div class="dm-spec-metric-box">
+                        <span>Bay Lane Width</span>
+                        <strong>3.00 Meters</strong>
+                      </div>
+                      <div class="dm-spec-metric-box">
+                        <span>Overall Track Length</span>
+                        <strong>12.00 Meters</strong>
+                      </div>
+                      <div class="dm-spec-metric-box">
+                        <span>Allowed Gear Shifts</span>
+                        <strong>1 Reverse Only</strong>
+                      </div>
+                      <div class="dm-spec-metric-box">
+                        <span>Sensor Threshold</span>
+                        <strong>Zero Kerb Touches</strong>
+                      </div>
+                    </div>
+
+                    <h4 style="font-size: var(--dm-font-size-sm); color: var(--dm-color-navy); margin-top: 4px;">
+                      Official Examination Checklist:
+                    </h4>
+
+                    <ul class="dm-maneuvers-list">
+                      <li class="dm-maneuver-item">
+                        <span class="dm-maneuver-num">1</span>
+                        <span><strong>Forward Entry:</strong> Drive forward into the left-top bay without touching either side boundary sensor. Come to a complete stop inside the designated stop box.</span>
+                      </li>
+                      <li class="dm-maneuver-item">
+                        <span class="dm-maneuver-num">2</span>
+                        <span><strong>Reverse Cross-Over:</strong> Shift into reverse. Using wing mirrors and rear-view mirror, back up and steer smoothly across the horizontal central crossbar into the right bay.</span>
+                      </li>
+                      <li class="dm-maneuver-item">
+                        <span class="dm-maneuver-num">3</span>
+                        <span><strong>Single Reverse Rule:</strong> The entire reversing maneuver must be done in one continuous fluid motion. Stopping and shifting back to forward gear to correct alignment fails the test.</span>
+                      </li>
+                      <li class="dm-maneuver-item">
+                        <span class="dm-maneuver-num">4</span>
+                        <span><strong>Exit:</strong> Shift into 1st gear and drive straight forward out through the designated green exit lane.</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- =========================================================
+             TRAFFIC SIGNALS LIBRARY BLOCK ("Know Every Signal")
+             ========================================================= -->
+        <div class="dm-signals-block dm-reveal" id="signals">
+          <div style="text-align: center; max-width: 720px; margin-inline: auto; margin-bottom: var(--dm-space-8);">
+            <span class="dm-eyebrow">Road Sign Lexicon</span>
+            <h3 style="font-size: clamp(1.85rem, 3.2vw, 2.5rem); color: var(--dm-color-navy); margin-bottom: 6px;">
+              Know Every Signal
+            </h3>
+            <p style="font-size: var(--dm-font-size-sm); color: var(--dm-color-text-secondary);">
+              Search through official road signs. Hover on desktop or tap on mobile to reveal the exact legal meaning and driving mandate.
+            </p>
+          </div>
+
+          <!-- Toolbar: Live Search + Category Tabs -->
+          <div class="dm-signals-toolbar">
+            <!-- Search Bar -->
+            <div class="dm-signals-search-wrap">
+              <svg class="dm-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+              <input 
+                type="text" 
+                class="dm-signals-search-input" 
+                id="signalSearchInput" 
+                placeholder="Search signals (e.g. Stop, Speed, Parking)..." 
+                aria-label="Search traffic signals"
+              />
+            </div>
+
+            <!-- Category Filter Tabs -->
+            <div class="dm-signal-category-tabs" role="tablist">
+              <button type="button" class="dm-signal-cat-btn is-active" data-category="all" role="tab">All Signs</button>
+              <button type="button" class="dm-signal-cat-btn" data-category="mandatory" role="tab">Mandatory (Regulatory)</button>
+              <button type="button" class="dm-signal-cat-btn" data-category="cautionary" role="tab">Cautionary (Warning)</button>
+              <button type="button" class="dm-signal-cat-btn" data-category="informatory" role="tab">Informatory (Guide)</button>
+            </div>
+          </div>
+
+          <!-- Signal Cards Grid -->
+          <div class="dm-signals-grid" id="signalsGrid">
+
+            <!-- ================= MANDATORY SIGNS ================= -->
+            <!-- 1. Stop -->
+            <div class="dm-signal-card" data-category="mandatory" data-name="Stop" data-meaning="Come to a complete halt before the white stop line. Yield to all cross-traffic before proceeding.">
+              <div class="dm-signal-icon-box">
+                <svg width="56" height="56" viewBox="0 0 100 100">
+                  <polygon points="30,5 70,5 95,30 95,70 70,95 30,95 5,70 5,30" fill="#DC2626" stroke="#FFFFFF" stroke-width="4"/>
+                  <text x="50" y="58" fill="#FFFFFF" font-family="'Plus Jakarta Sans', sans-serif" font-weight="900" font-size="22" text-anchor="middle">STOP</text>
+                </svg>
+              </div>
+              <div class="dm-signal-name">Stop</div>
+              <div class="dm-signal-tooltip">
+                <div class="dm-signal-tooltip-title">Stop</div>
+                <div class="dm-signal-tooltip-meaning">Come to a complete halt before the white line. Yield to cross-traffic before proceeding.</div>
+              </div>
+            </div>
+
+            <!-- 2. Give Way -->
+            <div class="dm-signal-card" data-category="mandatory" data-name="Give Way" data-meaning="Yield right of way to vehicles on the major road or junction. Proceed only when clear.">
+              <div class="dm-signal-icon-box">
+                <svg width="56" height="56" viewBox="0 0 100 100">
+                  <polygon points="50,92 8,15 92,15" fill="#DC2626"/>
+                  <polygon points="50,80 18,22 82,22" fill="#FFFFFF"/>
+                </svg>
+              </div>
+              <div class="dm-signal-name">Give Way</div>
+              <div class="dm-signal-tooltip">
+                <div class="dm-signal-tooltip-title">Give Way (Yield)</div>
+                <div class="dm-signal-tooltip-meaning">Yield right of way to vehicles on the main road. Slow down or stop if required.</div>
+              </div>
+            </div>
+
+            <!-- 3. No Entry -->
+            <div class="dm-signal-card" data-category="mandatory" data-name="No Entry" data-meaning="Strictly prohibits all vehicular traffic from entering this street or lane.">
+              <div class="dm-signal-icon-box">
+                <svg width="56" height="56" viewBox="0 0 100 100">
+                  <circle cx="50" cy="50" r="44" fill="#DC2626"/>
+                  <rect x="18" y="42" width="64" height="16" rx="3" fill="#FFFFFF"/>
+                </svg>
+              </div>
+              <div class="dm-signal-name">No Entry</div>
+              <div class="dm-signal-tooltip">
+                <div class="dm-signal-tooltip-title">No Entry</div>
+                <div class="dm-signal-tooltip-meaning">Prohibits all vehicular traffic from entering this roadway. High violation fine.</div>
+              </div>
+            </div>
+
+            <!-- 4. Speed Limit 50 -->
+            <div class="dm-signal-card" data-category="mandatory" data-name="Speed Limit 50" data-meaning="Maximum legal speed allowed under normal conditions is 50 km/h.">
+              <div class="dm-signal-icon-box">
+                <svg width="56" height="56" viewBox="0 0 100 100">
+                  <circle cx="50" cy="50" r="44" fill="#FFFFFF" stroke="#DC2626" stroke-width="12"/>
+                  <text x="50" y="60" fill="#0B1E42" font-family="'Plus Jakarta Sans', sans-serif" font-weight="900" font-size="34" text-anchor="middle">50</text>
+                </svg>
+              </div>
+              <div class="dm-signal-name">Speed Limit 50</div>
+              <div class="dm-signal-tooltip">
+                <div class="dm-signal-tooltip-title">Speed Limit 50 km/h</div>
+                <div class="dm-signal-tooltip-meaning">Maximum legal speed allowed under normal conditions. Automated radar enforcement.</div>
+              </div>
+            </div>
+
+            <!-- 5. Overtaking Prohibited -->
+            <div class="dm-signal-card" data-category="mandatory" data-name="Overtaking Prohibited" data-meaning="No vehicle may overtake another vehicle on this road section due to blind curves or narrow lanes.">
+              <div class="dm-signal-icon-box">
+                <svg width="56" height="56" viewBox="0 0 100 100">
+                  <circle cx="50" cy="50" r="44" fill="#FFFFFF" stroke="#DC2626" stroke-width="10"/>
+                  <!-- Right Car (Black) -->
+                  <rect x="52" y="36" width="22" height="28" rx="4" fill="#0B1E42"/>
+                  <!-- Left Car (Red) -->
+                  <rect x="26" y="36" width="22" height="28" rx="4" fill="#DC2626"/>
+                </svg>
+              </div>
+              <div class="dm-signal-name">No Overtaking</div>
+              <div class="dm-signal-tooltip">
+                <div class="dm-signal-tooltip-title">Overtaking Prohibited</div>
+                <div class="dm-signal-tooltip-meaning">Passing other vehicles is forbidden due to limited visibility or single-lane hazards.</div>
+              </div>
+            </div>
+
+            <!-- 6. No Horn -->
+            <div class="dm-signal-card" data-category="mandatory" data-name="No Horn" data-meaning="Honking is strictly illegal near hospitals, schools, courts, and quiet residential zones.">
+              <div class="dm-signal-icon-box">
+                <svg width="56" height="56" viewBox="0 0 100 100">
+                  <circle cx="50" cy="50" r="44" fill="#FFFFFF" stroke="#DC2626" stroke-width="10"/>
+                  <path d="M 30 45 L 45 45 L 60 32 L 60 68 L 45 55 L 30 55 Z" fill="#0B1E42"/>
+                  <line x1="20" y1="20" x2="80" y2="80" stroke="#DC2626" stroke-width="10"/>
+                </svg>
+              </div>
+              <div class="dm-signal-name">No Horn</div>
+              <div class="dm-signal-tooltip">
+                <div class="dm-signal-tooltip-title">Silence Zone (No Horn)</div>
+                <div class="dm-signal-tooltip-meaning">Sounding the horn is prohibited near hospitals, courts, schools, and silent zones.</div>
+              </div>
+            </div>
+
+            <!-- 7. Compulsory Ahead or Turn Right -->
+            <div class="dm-signal-card" data-category="mandatory" data-name="Compulsory Turn Right or Ahead" data-meaning="Vehicles must only proceed straight or execute a right turn at this intersection.">
+              <div class="dm-signal-icon-box">
+                <svg width="56" height="56" viewBox="0 0 100 100">
+                  <circle cx="50" cy="50" r="44" fill="#1E40AF"/>
+                  <!-- Arrow Straight -->
+                  <path d="M 46 65 L 46 32 L 38 40 L 46 22 L 54 40 L 46 32" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <!-- Arrow Right -->
+                  <path d="M 46 55 L 68 55 L 60 47 L 78 55 L 60 63 L 68 55" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="dm-signal-name">Ahead or Turn Right</div>
+              <div class="dm-signal-tooltip">
+                <div class="dm-signal-tooltip-title">Mandatory Ahead / Right</div>
+                <div class="dm-signal-tooltip-meaning">Vehicles must only proceed straight or make a right turn. Turning left is prohibited.</div>
+              </div>
+            </div>
+
+            <!-- 8. No Parking -->
+            <div class="dm-signal-card" data-category="mandatory" data-name="No Parking" data-meaning="Vehicles cannot be left unattended here. Brief stopping to let passengers alight is allowed.">
+              <div class="dm-signal-icon-box">
+                <svg width="56" height="56" viewBox="0 0 100 100">
+                  <circle cx="50" cy="50" r="44" fill="#1E40AF" stroke="#DC2626" stroke-width="10"/>
+                  <line x1="20" y1="20" x2="80" y2="80" stroke="#DC2626" stroke-width="10"/>
+                </svg>
+              </div>
+              <div class="dm-signal-name">No Parking</div>
+              <div class="dm-signal-tooltip">
+                <div class="dm-signal-tooltip-title">No Parking Allowed</div>
+                <div class="dm-signal-tooltip-meaning">Vehicles cannot be left parked on this curb. Tow-away zone strictly enforced.</div>
+              </div>
+            </div>
+
+            <!-- ================= CAUTIONARY SIGNS ================= -->
+            <!-- 9. Right Hairpin Bend -->
+            <div class="dm-signal-card" data-category="cautionary" data-name="Right Hairpin Bend" data-meaning="Sharp U-shaped right turn ahead. Reduce speed and downshift to lower gear.">
+              <div class="dm-signal-icon-box">
+                <svg width="56" height="56" viewBox="0 0 100 100">
+                  <polygon points="50,8 92,86 8,86" fill="#FEF08A" stroke="#DC2626" stroke-width="8"/>
+                  <path d="M 40 70 L 40 40 A 15 15 0 0 1 70 40 L 70 58 L 62 50 L 70 66 L 78 50 L 70 58" stroke="#0B1E42" stroke-width="6" stroke-linecap="round" fill="none"/>
+                </svg>
+              </div>
+              <div class="dm-signal-name">Right Hairpin Bend</div>
+              <div class="dm-signal-tooltip">
+                <div class="dm-signal-tooltip-title">Sharp Hairpin Bend</div>
+                <div class="dm-signal-tooltip-meaning">Severe 180° right curve ahead. Downshift gear and slow down significantly.</div>
+              </div>
+            </div>
+
+            <!-- 10. Narrow Road Ahead -->
+            <div class="dm-signal-card" data-category="cautionary" data-name="Narrow Road Ahead" data-meaning="The carriage road width decreases ahead. Do not attempt overtaking.">
+              <div class="dm-signal-icon-box">
+                <svg width="56" height="56" viewBox="0 0 100 100">
+                  <polygon points="50,8 92,86 8,86" fill="#FEF08A" stroke="#DC2626" stroke-width="8"/>
+                  <!-- Narrowing path -->
+                  <path d="M 32 72 L 32 60 L 42 46 L 42 32" stroke="#0B1E42" stroke-width="5" stroke-linecap="round"/>
+                  <path d="M 68 72 L 68 60 L 58 46 L 58 32" stroke="#0B1E42" stroke-width="5" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div class="dm-signal-name">Narrow Road Ahead</div>
+              <div class="dm-signal-tooltip">
+                <div class="dm-signal-tooltip-title">Road Narrowing</div>
+                <div class="dm-signal-tooltip-meaning">Road narrows into fewer lanes ahead. Merge with caution; no overtaking.</div>
+              </div>
+            </div>
+
+            <!-- 11. Pedestrian Crossing -->
+            <div class="dm-signal-card" data-category="cautionary" data-name="Pedestrian Crossing" data-meaning="Designated zebra crosswalk ahead. Drivers must yield right of way to pedestrians.">
+              <div class="dm-signal-icon-box">
+                <svg width="56" height="56" viewBox="0 0 100 100">
+                  <polygon points="50,8 92,86 8,86" fill="#FEF08A" stroke="#DC2626" stroke-width="8"/>
+                  <!-- Pedestrian silhouette & crosswalk lines -->
+                  <circle cx="50" cy="36" r="5" fill="#0B1E42"/>
+                  <path d="M 44 48 L 56 48 L 52 64 L 62 74" stroke="#0B1E42" stroke-width="4" stroke-linecap="round"/>
+                  <line x1="30" y1="76" x2="70" y2="76" stroke="#0B1E42" stroke-width="3"/>
+                </svg>
+              </div>
+              <div class="dm-signal-name">Pedestrian Crossing</div>
+              <div class="dm-signal-tooltip">
+                <div class="dm-signal-tooltip-title">Pedestrian Crossing (Zebra)</div>
+                <div class="dm-signal-tooltip-meaning">Designated crosswalk ahead. Slow down and prepare to yield to crossing pedestrians.</div>
+              </div>
+            </div>
+
+            <!-- 12. Speed Breaker / Hump -->
+            <div class="dm-signal-card" data-category="cautionary" data-name="Speed Breaker" data-meaning="Road hump or speed bump ahead. Slow down to avoid damage to suspension or loss of control.">
+              <div class="dm-signal-icon-box">
+                <svg width="56" height="56" viewBox="0 0 100 100">
+                  <polygon points="50,8 92,86 8,86" fill="#FEF08A" stroke="#DC2626" stroke-width="8"/>
+                  <!-- Bump -->
+                  <path d="M 28 66 Q 50 40 72 66" stroke="#0B1E42" stroke-width="6" stroke-linecap="round" fill="none"/>
+                </svg>
+              </div>
+              <div class="dm-signal-name">Speed Breaker Ahead</div>
+              <div class="dm-signal-tooltip">
+                <div class="dm-signal-tooltip-title">Speed Breaker / Hump</div>
+                <div class="dm-signal-tooltip-meaning">Artificial road elevation ahead. Slow down to 10–15 km/h to prevent underbody impact.</div>
+              </div>
+            </div>
+
+            <!-- 13. Roundabout Ahead -->
+            <div class="dm-signal-card" data-category="cautionary" data-name="Roundabout Ahead" data-meaning="Traffic rotary ahead. Vehicles already circulating in the roundabout have right of way.">
+              <div class="dm-signal-icon-box">
+                <svg width="56" height="56" viewBox="0 0 100 100">
+                  <polygon points="50,8 92,86 8,86" fill="#FEF08A" stroke="#DC2626" stroke-width="8"/>
+                  <!-- Circular revolving arrows -->
+                  <path d="M 50 36 A 16 16 0 0 1 66 52" stroke="#0B1E42" stroke-width="4" fill="none"/>
+                  <path d="M 66 52 A 16 16 0 0 1 50 68" stroke="#0B1E42" stroke-width="4" fill="none"/>
+                  <path d="M 50 68 A 16 16 0 0 1 34 52" stroke="#0B1E42" stroke-width="4" fill="none"/>
+                  <path d="M 34 52 A 16 16 0 0 1 50 36" stroke="#0B1E42" stroke-width="4" fill="none"/>
+                </svg>
+              </div>
+              <div class="dm-signal-name">Roundabout Ahead</div>
+              <div class="dm-signal-tooltip">
+                <div class="dm-signal-tooltip-title">Roundabout Ahead</div>
+                <div class="dm-signal-tooltip-meaning">Traffic rotary coming up. Vehicles inside the roundabout have right of way.</div>
+              </div>
+            </div>
+
+            <!-- 14. School Ahead -->
+            <div class="dm-signal-card" data-category="cautionary" data-name="School Ahead" data-meaning="School zone ahead. Watch for children crossing suddenly and observe 25 km/h school speed limits.">
+              <div class="dm-signal-icon-box">
+                <svg width="56" height="56" viewBox="0 0 100 100">
+                  <polygon points="50,8 92,86 8,86" fill="#FEF08A" stroke="#DC2626" stroke-width="8"/>
+                  <circle cx="44" cy="38" r="4" fill="#0B1E42"/>
+                  <path d="M 44 44 L 44 60 L 38 72" stroke="#0B1E42" stroke-width="3" stroke-linecap="round"/>
+                  <circle cx="58" cy="44" r="3.5" fill="#0B1E42"/>
+                  <path d="M 58 49 L 58 64 L 64 72" stroke="#0B1E42" stroke-width="3" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div class="dm-signal-name">School Ahead</div>
+              <div class="dm-signal-tooltip">
+                <div class="dm-signal-tooltip-title">School Zone</div>
+                <div class="dm-signal-tooltip-meaning">Children crossing expected. Adhere to school zone speed limit (25 km/h max).</div>
+              </div>
+            </div>
+
+            <!-- ================= INFORMATORY SIGNS ================= -->
+            <!-- 15. Hospital -->
+            <div class="dm-signal-card" data-category="informatory" data-name="Hospital" data-meaning="Medical facility / emergency hospital located immediately adjacent to the road.">
+              <div class="dm-signal-icon-box">
+                <svg width="56" height="56" viewBox="0 0 100 100">
+                  <rect x="8" y="8" width="84" height="84" rx="10" fill="#1E40AF"/>
+                  <rect x="22" y="22" width="56" height="56" rx="6" fill="#FFFFFF"/>
+                  <!-- Red Cross -->
+                  <rect x="44" y="30" width="12" height="40" fill="#DC2626"/>
+                  <rect x="30" y="44" width="40" height="12" fill="#DC2626"/>
+                </svg>
+              </div>
+              <div class="dm-signal-name">Hospital</div>
+              <div class="dm-signal-tooltip">
+                <div class="dm-signal-tooltip-title">Hospital / First Aid</div>
+                <div class="dm-signal-tooltip-meaning">Emergency healthcare facility nearby. Honking strictly prohibited.</div>
+              </div>
+            </div>
+
+            <!-- 16. Petrol Pump -->
+            <div class="dm-signal-card" data-category="informatory" data-name="Petrol Pump & EV" data-meaning="Fuel filling station and electric vehicle charging point located within 500 meters.">
+              <div class="dm-signal-icon-box">
+                <svg width="56" height="56" viewBox="0 0 100 100">
+                  <rect x="8" y="8" width="84" height="84" rx="10" fill="#1E40AF"/>
+                  <rect x="22" y="22" width="56" height="56" rx="6" fill="#FFFFFF"/>
+                  <rect x="34" y="32" width="22" height="34" rx="3" fill="#0B1E42"/>
+                  <path d="M 56 40 C 66 40 68 50 64 60" stroke="#0B1E42" stroke-width="4" stroke-linecap="round" fill="none"/>
+                </svg>
+              </div>
+              <div class="dm-signal-name">Fuel &amp; EV Station</div>
+              <div class="dm-signal-tooltip">
+                <div class="dm-signal-tooltip-title">Fuel &amp; EV Charging</div>
+                <div class="dm-signal-tooltip-meaning">Refueling petrol pump and EV charging station nearby along this route.</div>
+              </div>
+            </div>
+
+            <!-- 17. Parking (P) -->
+            <div class="dm-signal-card" data-category="informatory" data-name="Parking" data-meaning="Designated public parking zone for vehicles. Follow local parking fee rules.">
+              <div class="dm-signal-icon-box">
+                <svg width="56" height="56" viewBox="0 0 100 100">
+                  <rect x="8" y="8" width="84" height="84" rx="10" fill="#1E40AF"/>
+                  <text x="50" y="68" fill="#FFFFFF" font-family="'Plus Jakarta Sans', sans-serif" font-weight="900" font-size="52" text-anchor="middle">P</text>
+                </svg>
+              </div>
+              <div class="dm-signal-name">Parking Area</div>
+              <div class="dm-signal-tooltip">
+                <div class="dm-signal-tooltip-title">Parking Facility</div>
+                <div class="dm-signal-tooltip-meaning">Authorized vehicle parking bay available on this side of the road.</div>
+              </div>
+            </div>
+
+            <!-- 18. One Way -->
+            <div class="dm-signal-card" data-category="informatory" data-name="One Way Traffic" data-meaning="Traffic is permitted to move only in the specified direction indicated by the arrow.">
+              <div class="dm-signal-icon-box">
+                <svg width="56" height="56" viewBox="0 0 100 100">
+                  <rect x="8" y="8" width="84" height="84" rx="10" fill="#1E40AF"/>
+                  <!-- Arrow Up -->
+                  <path d="M 50 72 L 50 28 L 36 42 L 50 20 L 64 42 L 50 28" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="dm-signal-name">One Way Traffic</div>
+              <div class="dm-signal-tooltip">
+                <div class="dm-signal-tooltip-title">One Way Road</div>
+                <div class="dm-signal-tooltip-meaning">Vehicular traffic permitted in the direction of the arrow only. No oncoming traffic.</div>
+              </div>
+            </div>
+
+            <!-- Empty search state -->
+            <div class="dm-signals-empty-state" id="signalsEmptyState">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="margin-inline: auto; margin-bottom: 8px;">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+              <h4 style="font-size: var(--dm-font-size-base); color: var(--dm-color-navy); margin-bottom: 4px;">No Signals Found</h4>
+              <p style="font-size: var(--dm-font-size-xs);">Try searching for "Stop", "Speed", "Turn", "Parking", or switch category tabs.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         CLOSING CTA BAND
+         ========================================================= -->
+    <section class="dm-shared-cta">
+      <div class="dm-container">
+        <div class="dm-shared-cta-box dm-reveal">
+          <span class="dm-eyebrow" style="color: var(--dm-color-orange); margin-bottom: var(--dm-space-3);">
+            Accredited Test Preparation
+          </span>
+          <h2 class="dm-shared-cta-headline">
+            Study smart. Drive confident.
+          </h2>
+          <p class="dm-shared-cta-lead">
+            Book your practice session on an official RTO simulation track with an accredited trainer today.
+          </p>
+
+          <div class="dm-shared-cta-buttons">
+            <a href="/explore.html#learners" class="dm-btn dm-btn-primary dm-btn-lg">
+              Get Started Now
+              <svg class="dm-icon-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="4" y1="10" x2="16" y2="10"></line>
+                <polyline points="11 5 16 10 11 15"></polyline>
+              </svg>
+            </a>
+            <a href="/explore.html#trainers" class="dm-btn dm-btn-white dm-btn-lg">
+              Explore Test Track Centers
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================
+       GLOBAL FOOTER (Reusable Component)
+       ========================================================= -->
+  <footer class="dm-footer" id="footer" role="contentinfo">
+    <div class="dm-container">
+      <div class="dm-footer-grid">
+        <!-- Col 1: Brand & Tagline -->
+        <div class="dm-footer-brand">
+          <a href="/" aria-label="DriveMe Home">
+            <div class="dm-footer-logo-badge">
+              <img src="/driveme-logo.jpeg" alt="DriveMe - Learn. Drive. Grow." class="dm-footer-logo-img">
+            </div>
+          </a>
+          <div class="dm-footer-tagline">Learn. Drive. Grow.</div>
+          <p class="dm-footer-desc">
+            Empowering modern learners with verified driving instructors, certified academies, and flexible car and two-wheeler training sessions.
+          </p>
+        </div>
+
+        <!-- Col 2: Quick Links -->
+        <div>
+          <h4 class="dm-footer-title">Quick Links</h4>
+          <ul class="dm-footer-links">
+            <li><a href="/" class="dm-footer-link">Home</a></li>
+            <li><a href="/explore.html" class="dm-footer-link">Explore</a></li>
+            <li><a href="/learn.html" class="dm-footer-link">Learn</a></li>
+            <li><a href="/about.html" class="dm-footer-link">About</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Contact Channels -->
+        <div>
+          <h4 class="dm-footer-title">Contact Us</h4>
+          <div class="dm-footer-contact">
+            <a href="tel:+18005553748" class="dm-contact-item">
+              <span class="dm-contact-icon">
+                <svg viewBox="0 0 24 24">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+              </span>
+              <span>+1 (800) 555-DRIVE</span>
+            </a>
+
+            <a href="mailto:hello@driveme.com" class="dm-contact-item">
+              <span class="dm-contact-icon">
+                <svg viewBox="0 0 24 24">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+              </span>
+              <span>hello@driveme.com</span>
+            </a>
+
+            <a href="https://wa.me/18005553748" target="_blank" rel="noopener noreferrer" class="dm-contact-item">
+              <span class="dm-contact-icon dm-contact-icon--whatsapp">
+                <svg viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                  <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+                </svg>
+              </span>
+              <span>WhatsApp Support</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Col 4: Community & Socials -->
+        <div>
+          <h4 class="dm-footer-title">Connect</h4>
+          <p style="font-size: var(--dm-font-size-xs); color: rgba(255, 255, 255, 0.65); margin-bottom: var(--dm-space-3);">
+            Follow our learning community for driving safety tips, road test updates, and student stories.
+          </p>
+          <div class="dm-footer-socials">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="dm-social-btn" aria-label="Instagram">
+              <svg viewBox="0 0 24 24">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" fill="none" stroke="currentColor" stroke-width="2"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="currentColor" stroke-width="2.5"></line>
+              </svg>
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="dm-social-btn" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24">
+                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+              </svg>
+            </a>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="dm-social-btn" aria-label="Facebook">
+              <svg viewBox="0 0 24 24">
+                <path d="M9 8H6v4h3v12h5V12h3.642L18 8h-4V6.333C14 5.374 14.5 5 15.5 5H18V0h-3.808C10.595 0 9 1.582 9 4.615V8z"/>
+              </svg>
+            </a>
+          </div>
+
+          <div class="dm-footer-app">
+            <h4 class="dm-footer-title">Get the DriveMe App</h4>
+            <div class="dm-footer-app-badges">
+              <a href="#" class="dm-app-badge" aria-label="Download on the App Store">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.1.8 1.21-.25 2.37-.93 3.66-.84 1.55.13 2.72.74 3.48 1.85-3.2 1.92-2.44 6.13.49 7.31-.59 1.55-1.36 3.09-2.73 3.85zM12.05 7.25C11.9 4.94 13.77 3.03 15.92 2.9c.3 2.67-2.42 4.67-3.87 4.35z" /></svg>
+                <span><small>Download on the</small>App Store</span>
+              </a>
+              <a href="#" class="dm-app-badge" aria-label="Get it on Google Play">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 2.75c-.31.33-.5.84-.5 1.5v15.5c0 .66.19 1.17.5 1.5L14.25 12 3.5 2.75zM15 12.65l2.7 2.35-11.95 6.85L15 12.65zM15 11.35L5.75 2.15l11.95 6.85L15 11.35zM18.6 9.55l2.1 1.2c.6.34.6 1.16 0 1.5l-2.1 1.2-2.95-2.6 2.95-1.3z" /></svg>
+                <span><small>Get it on</small>Google Play</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="dm-footer-bottom">
+        <div>
+          &copy; <span id="current-year">2026</span> DriveMe Inc. All rights reserved. "Learn. Drive. Grow." is a registered trademark.
+        </div>
+        <div class="dm-footer-legal">
+          <a href="#privacy">Privacy Policy</a>
+          <a href="#terms">Terms of Service</a>
+          <a href="#safety">Safety Standards</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="/src/scripts/main.js"></script>
+</body>
+</html>

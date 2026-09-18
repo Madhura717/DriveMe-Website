@@ -1,0 +1,143 @@
+/**
+ * DriveMe Main CSS Entry Point
+ * Orchestrates tokens, reset, base styles, components, and animations
+ */
+
+@import './tokens.css';
+@import './base.css';
+@import './components/layout.css';
+@import './components/buttons.css';
+@import './components/badges.css';
+@import './components/cards.css';
+@import './components/navbar.css';
+@import './components/footer.css';
+@import './components/modal.css';
+@import './components/auth-modal.css';
+@import './components/chatbot.css';
+@import './animations.css';
+@import './home.css';
+@import './explore.css';
+@import './about.css';
+@import './learn.css';
+
+/* -------------------------------------------------------------
+   Showcase & Demo Utility Styles
+   ------------------------------------------------------------- */
+.dm-hero-preview {
+  padding-top: calc(var(--dm-nav-height) + 3rem);
+  padding-bottom: clamp(4rem, 8vw, 6.5rem);
+  background: radial-gradient(circle at 80% 20%, rgba(242, 129, 29, 0.08) 0%, transparent 50%),
+              radial-gradient(circle at 10% 80%, rgba(11, 30, 66, 0.04) 0%, transparent 40%),
+              var(--dm-color-bg);
+  position: relative;
+}
+
+.dm-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--dm-color-surface);
+  border: 1px solid var(--dm-color-border-subtle);
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--dm-radius-full);
+  font-size: var(--dm-font-size-xs);
+  font-weight: var(--dm-font-weight-semibold);
+  color: var(--dm-color-navy);
+  margin-bottom: var(--dm-space-4);
+  box-shadow: var(--dm-shadow-xs);
+}
+
+.dm-hero-badge span {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--dm-color-orange);
+}
+
+/* Color Token Swatches */
+.dm-swatch-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: var(--dm-space-4);
+}
+
+.dm-swatch-card {
+  background-color: var(--dm-color-surface);
+  border: 1px solid var(--dm-color-border-subtle);
+  border-radius: var(--dm-radius-md);
+  overflow: hidden;
+  box-shadow: var(--dm-shadow-xs);
+  cursor: pointer;
+  transition: transform var(--dm-transition-base), box-shadow var(--dm-transition-base);
+}
+
+.dm-swatch-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--dm-shadow-md);
+}
+
+.dm-swatch-color {
+  height: 84px;
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 0.5rem;
+}
+
+.dm-swatch-info {
+  padding: var(--dm-space-3) var(--dm-space-4);
+}
+
+.dm-swatch-name {
+  font-family: var(--dm-font-heading);
+  font-size: var(--dm-font-size-sm);
+  font-weight: var(--dm-font-weight-bold);
+  color: var(--dm-color-navy);
+}
+
+.dm-swatch-hex {
+  font-size: var(--dm-font-size-xs);
+  color: var(--dm-color-text-secondary);
+  font-family: monospace;
+}
+
+.dm-swatch-role {
+  font-size: 11px;
+  color: var(--dm-color-text-muted);
+  margin-top: 2px;
+}
+
+/* Copy Toast */
+.dm-toast {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background-color: var(--dm-color-navy);
+  color: var(--dm-color-surface);
+  padding: 0.75rem 1.25rem;
+  border-radius: var(--dm-radius-md);
+  font-size: var(--dm-font-size-sm);
+  font-family: var(--dm-font-heading);
+  font-weight: var(--dm-font-weight-medium);
+  box-shadow: var(--dm-shadow-lg);
+  z-index: var(--dm-z-toast);
+  transform: translateY(100px);
+  opacity: 0;
+  transition: transform var(--dm-transition-spring), opacity var(--dm-transition-base);
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dm-toast.is-active {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.dm-toast svg {
+  color: var(--dm-color-orange);
+}

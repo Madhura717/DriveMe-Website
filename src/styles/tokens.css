@@ -1,0 +1,117 @@
+/**
+ * DriveMe Design Tokens
+ * Brand Colors, Typography, Spacing, Shadows, Radii, Transitions
+ */
+
+:root {
+  /* Brand Colors */
+  --dm-color-navy: #0B1E42;
+  --dm-color-navy-dark: #07132B;
+  --dm-color-navy-light: #162E5F;
+  --dm-color-navy-rgb: 11, 30, 66;
+
+  --dm-color-orange: #F2811D;
+  --dm-color-orange-hover: #E06F0E;
+  --dm-color-orange-active: #C85F08;
+  --dm-color-orange-light: #FFF4EA;
+  --dm-color-orange-rgb: 242, 129, 29;
+
+  --dm-color-bg: #FAFAFC;
+  --dm-color-surface: #FFFFFF;
+  --dm-color-surface-subtle: #F4F5F8;
+
+  --dm-color-text-primary: #0B1E42;
+  --dm-color-text-secondary: #5B6472;
+  --dm-color-text-muted: #8A94A6;
+  --dm-color-text-inverse: #FFFFFF;
+
+  --dm-color-border: #E5E7EB;
+  --dm-color-border-subtle: #EEF0F4;
+  --dm-color-border-focus: #F2811D;
+
+  /* Status Badges (used sparingly) */
+  --dm-status-available: #10B981;
+  --dm-status-available-bg: #ECFDF5;
+  --dm-status-available-border: #A7F3D0;
+
+  --dm-status-booked: #F59E0B;
+  --dm-status-booked-bg: #FFFBEB;
+  --dm-status-booked-border: #FDE68A;
+
+  --dm-status-offduty: #64748B;
+  --dm-status-offduty-bg: #F1F5F9;
+  --dm-status-offduty-border: #CBD5E1;
+
+  /* Typography */
+  --dm-font-heading: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --dm-font-body: 'Inter', system-ui, -apple-system, sans-serif;
+
+  --dm-font-size-xs: 0.75rem;    /* 12px */
+  --dm-font-size-sm: 0.875rem;   /* 14px */
+  --dm-font-size-base: 1rem;     /* 16px */
+  --dm-font-size-lg: 1.125rem;   /* 18px */
+  --dm-font-size-xl: 1.25rem;    /* 20px */
+  --dm-font-size-2xl: 1.5rem;    /* 24px */
+  --dm-font-size-3xl: 1.875rem;  /* 30px */
+  --dm-font-size-4xl: 2.25rem;   /* 36px */
+  --dm-font-size-5xl: 3rem;      /* 48px */
+  --dm-font-size-6xl: 3.75rem;   /* 60px */
+
+  --dm-font-weight-normal: 400;
+  --dm-font-weight-medium: 500;
+  --dm-font-weight-semibold: 600;
+  --dm-font-weight-bold: 700;
+  --dm-font-weight-extrabold: 800;
+
+  --dm-letter-spacing-eyebrow: 0.14em;
+  --dm-letter-spacing-tight: -0.02em;
+
+  /* Spacing Scale */
+  --dm-space-1: 0.25rem;  /* 4px */
+  --dm-space-2: 0.5rem;   /* 8px */
+  --dm-space-3: 0.75rem;  /* 12px */
+  --dm-space-4: 1rem;     /* 16px */
+  --dm-space-5: 1.25rem;  /* 20px */
+  --dm-space-6: 1.5rem;   /* 24px */
+  --dm-space-8: 2rem;     /* 32px */
+  --dm-space-10: 2.5rem;  /* 40px */
+  --dm-space-12: 3rem;    /* 48px */
+  --dm-space-16: 4rem;    /* 64px */
+  --dm-space-20: 5rem;    /* 80px */
+  --dm-space-24: 6rem;    /* 96px */
+
+  /* Border Radii (12-16px core design principle) */
+  --dm-radius-sm: 8px;
+  --dm-radius-md: 12px;
+  --dm-radius-lg: 16px;
+  --dm-radius-xl: 24px;
+  --dm-radius-full: 9999px;
+
+  /* Elevation & Shadows */
+  --dm-shadow-xs: 0 1px 2px 0 rgba(11, 30, 66, 0.04);
+  --dm-shadow-sm: 0 2px 8px -2px rgba(11, 30, 66, 0.06), 0 1px 4px -1px rgba(11, 30, 66, 0.04);
+  --dm-shadow-md: 0 8px 20px -4px rgba(11, 30, 66, 0.08), 0 4px 8px -2px rgba(11, 30, 66, 0.04);
+  --dm-shadow-lg: 0 16px 32px -6px rgba(11, 30, 66, 0.1), 0 8px 16px -4px rgba(11, 30, 66, 0.06);
+  --dm-shadow-xl: 0 24px 48px -10px rgba(11, 30, 66, 0.14), 0 12px 24px -6px rgba(11, 30, 66, 0.08);
+  --dm-shadow-orange-glow: 0 8px 24px -4px rgba(242, 129, 29, 0.35);
+
+  /* Layout Widths */
+  --dm-container-max: 1240px;
+  --dm-container-padding: 1.5rem;
+  --dm-nav-height: 76px;
+
+  /* Transitions */
+  --dm-transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --dm-transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --dm-transition-slow: 400ms cubic-bezier(0.16, 1, 0.3, 1);
+  --dm-transition-spring: 350ms cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* Z-Indices */
+  --dm-z-base: 1;
+  --dm-z-elevated: 10;
+  --dm-z-sticky: 100;
+  --dm-z-backdrop: 990;
+  --dm-z-drawer: 1000;
+  --dm-z-modal: 1050;
+  --dm-z-toast: 1100;
+}
